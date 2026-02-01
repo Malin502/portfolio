@@ -1,3 +1,43 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+    /* カラー設定 */
+    --color-background: #FAF9F6;
+    --color-foreground: #333333;
+
+    --color-mint: #93ffc9;
+    --color-turquoise: #43e6d5;
+    --color-pink: #f4b3c2;
+    --color-beige: #fff1e6;
+    --color-teal: #008080;
+    --color-darkgray: #333333;
+
+    --font-sans: var(--font-inter);
+    --font-jp: var(--font-noto-sans-jp);
+}
+
+:root {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans), var(--font-jp), sans-serif;
+}
+
+body {
+    /* 横スクロールを防止 */
+    overflow-x: hidden;
+}
+
+/* スクロールバーのカスタム */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-beige);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-turquoise);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-teal);
+}
