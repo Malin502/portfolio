@@ -5,7 +5,7 @@ import { PROFILE } from "@/data/profile";
 
 export const Profile = () => {
   return (
-    <section id="profile" className="py-24 bg-background">
+    <section id="profile" className="py-24 bg-white">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* セクションタイトル */}
         <div className="text-center mb-16">
@@ -15,7 +15,7 @@ export const Profile = () => {
         </div>
         <div className="flex flex-col md:flex-row gap-12 items-start justify-center">
           {/* 左側: プロフィールカード */}
-          <div className="w-full md:w-1/3 bg-white shadow-lg rounded-3xl p-8 flex flex-col items-center border border-gray-100">
+          <div className="w-full md:w-1/3 bg-background shadow-lg rounded-3xl p-8 flex flex-col items-center border border-gray-100">
             {/* 円形アイコン画像 */}
             <div className="relative w-60 h-60 lg:w-50 lg:h-50 mb-8">
                 <div className="absolute inset-0 bg-gray-200 rounded-full animate-blob mix-blend-multiply filter blur-xl opacity-70"></div>
@@ -36,7 +36,7 @@ export const Profile = () => {
             </div>
           </div>
           {/* 右側: テキストエリア */}
-          <div className="w-full md:w-1/2 space-y-8">
+          <div className="w-full md:w-1/2 space-y-8 ml-10">
             {/* Introduction */}
             <div>
               <h3 className="text-xl font-bold text-turquoise border-l-4 border-turquoise pl-3 mb-3">
@@ -51,9 +51,15 @@ export const Profile = () => {
               <h3 className="text-xl font-bold text-turquoise border-l-4 border-turquoise pl-3 mb-3">
                 History
               </h3>
-              <p className="text-muted-foreground leading-loose whitespace-pre-wrap">
-                {PROFILE.history}
-              </p>
+              {PROFILE.history && PROFILE.history.length > 0 ? (
+                <ul className="list-disc pl-6 history-list">
+                  {PROFILE.history.map((item, idx) => (
+                    <li key={idx} className="mb-1">
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              ) : null}
             </div>
           </div>
         </div>

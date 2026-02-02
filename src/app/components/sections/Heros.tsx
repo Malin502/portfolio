@@ -7,12 +7,14 @@ import { motion } from "framer-motion";
 import { ArrowRight, Github } from "lucide-react";
 
 import { HERO } from "@/data/hero";
+import AnimatedBackground from "@/app/components/ui/AnimatedBackground";
 
 export const Hero = () => {
     return (
-        <section className="min-h-screen flex items-center justify-center bg-background relative
-        overflow-hidden pt-20 lg:pt-0">
-            <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+        <section className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden pt-20 lg:pt-0">
+            {/* 背景レイヤー */}
+            <AnimatedBackground />
+            <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 items-center gap-12 relative z-10">
 
                 {/* 左側: テキスト*/}
                 <motion.div
@@ -32,7 +34,7 @@ export const Hero = () => {
                     </h1>
 
                     {/* ひとこと */}
-                    <p className="text-muted-foreground text-lg mb-8 leading-relaxed max-w-lg">
+                    <p className="text-muted-foreground text-lg mb-8 leading-relaxed max-w-lg whitespace-pre-wrap">
                         {HERO.comment}
                     </p>
 
@@ -62,7 +64,7 @@ export const Hero = () => {
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 0.2 }}
-                    className="order-1 lg:order-2 flex justify-center lg:justify-end">
+                    className="order-1 lg:order-2 flex justify-center lg:justify-end relative z-10">
                     {/* 円形装飾背景 */}
                     <div className="relative w-80 h-80 lg:w-96 lg:h-96">
                         <div className="absolute inset-0 bg-gray-200 rounded-full animate-blob mix-blend-multiply filter blur-xl opacity-70"></div>
