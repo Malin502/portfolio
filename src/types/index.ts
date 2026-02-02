@@ -18,7 +18,7 @@ export interface Profile {
   nameEn: string;
   nameJp: string
   description: string;
-  history: string;
+  history: string[];
   skills: string[];
 };
 
