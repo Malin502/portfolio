@@ -11,7 +11,7 @@ export const Research = () => {
     setOpenId(openId === id ? null : id);
   };
   return (
-    <section id="research" className="py-24 bg-sky-50/50"> {/* 薄い水色背景 */}
+    <section id="research" className="py-24 bg-sky-50"> 
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold tracking-wider mb-2">RESEARCH</h2>
