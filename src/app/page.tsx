@@ -1,7 +1,31 @@
+import { Header } from "./components/layout/Header";
+import { Hero } from "./components/sections/Heros";
+import { Profile } from "./components/sections/Profile";
+import { Research } from "./components/sections/Research";
+import { Skill } from "./components/sections/Skill";
+import { Qualification } from "./components/sections/Qualification";
+import { Works } from "./components/sections/Works";
+import { Experience } from "./components/sections/Experience";
+import { Future } from "./components/sections/Future";
+import { Contact } from "./components/sections/Contact";
+import { Footer } from "./components/layout/Footer";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <h1>Portfolio Project Started</h1>
-    </main>
+    <>
+      <Header />
+      <main className="flex flex-col space-y-0">
+        <Hero />
+        <Profile />
+        <Research />
+        <Skill />
+        <Qualification />
+        <Works />
+        <Experience />
+        <Future />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }

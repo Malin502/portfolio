@@ -27,6 +27,14 @@ body {
     overflow-x: hidden;
 }
 
+/* History list marker color */
+.history-list {
+  list-style-type: disc;
+}
+.history-list li::marker {
+  color: var(--color-turquoise);
+}
+
 /* スクロールバーのカスタム */
 ::-webkit-scrollbar {
     width: 10px;
@@ -40,4 +48,231 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-teal);
+}
+
+/* -----------------------------
+   Hero Animated Background
+   ----------------------------- */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hero-network {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+  z-index: 0; /* ブロブやオービットの下層でも良いが、見え方に応じて調整可能 */
+}
+
+/* パララックス層：マウス位置に応じて移動量を変える */
+.hero-layer {
+  position: absolute;
+  inset: 0;
+  will-change: transform;
+}
+.hero-layer.layer1 {
+  --fx: 2.5vmin;
+  --fy: 2.5vmin;
+  transform: translate(calc(var(--px, 0) * var(--fx)), calc(var(--py, 0) * var(--fy)));
+}
+.hero-layer.layer2 {
+  --fx: 1.5vmin;
+  --fy: 1.5vmin;
+  transform: translate(calc(var(--px, 0) * var(--fx)), calc(var(--py, 0) * var(--fy)));
+}
+.hero-layer.layer3 {
+  --fx: 1vmin;
+  --fy: 1vmin;
+  transform: translate(calc(var(--px, 0) * var(--fx)), calc(var(--py, 0) * var(--fy)));
+}
+
+.hero-blob {
+  position: absolute;
+  width: 44vmin;
+  height: 44vmin;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.55;
+  mix-blend-mode: plus-lighter;
+  background: radial-gradient(circle at 30% 30%,
+    color-mix(in oklab, var(--color-mint) 70%, white 30%) 0%,
+    color-mix(in oklab, var(--color-pink) 50%, transparent 50%) 70%,
+    transparent 100%);
+  animation: blobMove 18s ease-in-out infinite alternate;
+}
+
+.hero-blob.blob1 {
+  top: -10vmin;
+  left: -8vmin;
+  animation-duration: 22s;
+}
+
+.hero-blob.blob2 {
+  bottom: -12vmin;
+  right: -6vmin;
+  background: radial-gradient(circle at 70% 40%,
+    color-mix(in oklab, var(--color-turquoise) 70%, white 30%) 0%,
+    color-mix(in oklab, var(--color-beige) 60%, transparent 40%) 65%,
+    transparent 100%);
+  animation-duration: 26s;
+  animation-delay: 2s;
+}
+
+.hero-blob.blob3 {
+  top: 30%;
+  left: 55%;
+  width: 36vmin;
+  height: 36vmin;
+  background: radial-gradient(circle at 40% 70%,
+    color-mix(in oklab, var(--color-pink) 65%, white 35%) 0%,
+    color-mix(in oklab, var(--color-turquoise) 45%, transparent 55%) 60%,
+    transparent 100%);
+  animation-duration: 24s;
+  animation-delay: 4s;
+}
+
+@keyframes blobMove {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+  }
+  50% {
+    transform: translate3d(2vmin, -3vmin, 0) scale(1.06) rotate(8deg);
+  }
+  100% {
+    transform: translate3d(-2vmin, 2vmin, 0) scale(0.98) rotate(-6deg);
+  }
+}
+
+.hero-orbits {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.orbit {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  border: 1.5px dotted color-mix(in oklab, var(--color-pink) 60%, white 40%);
+  opacity: 0.6;
+  animation: orbitSpin 28s linear infinite;
+}
+.orbit.orbit1 {
+  width: 28vmin;
+  height: 28vmin;
+  animation-duration: 24s;
+}
+.orbit.orbit2 {
+  width: 38vmin;
+  height: 38vmin;
+  border-color: color-mix(in oklab, var(--color-turquoise) 60%, white 40%);
+  animation-duration: 32s;
+  animation-direction: reverse;
+}
+.orbit::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -4px;
+  width: 8px;
+  height: 8px;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--color-pink) 70%, white 30%);
+  box-shadow: 0 0 12px color-mix(in oklab, var(--color-pink) 60%, white 40%);
+  filter: blur(0.2px);
+  mix-blend-mode: lighten;
+}
+.orbit.orbit2::after {
+  background: color-mix(in oklab, var(--color-turquoise) 70%, white 30%);
+  box-shadow: 0 0 12px color-mix(in oklab, var(--color-turquoise) 60%, white 40%);
+}
+
+@keyframes orbitSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+.hero-bubbles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.hero-bubble {
+  position: absolute;
+  bottom: -12vmin;
+  left: calc(var(--x, 50) * 1%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--color-pink) 50%, white 50%);
+  box-shadow: 0 0 8px color-mix(in oklab, var(--color-pink) 40%, white 60%);
+  opacity: 0.5;
+  animation-name: bubbleRise;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: calc(12s + var(--speed, 0s));
+  animation-delay: var(--delay, 0s);
+}
+.hero-bubble:nth-child(3n) {
+  background: color-mix(in oklab, var(--color-turquoise) 50%, white 50%);
+  box-shadow: 0 0 8px color-mix(in oklab, var(--color-turquoise) 40%, white 60%);
+}
+.hero-bubble:nth-child(4n) {
+  background: color-mix(in oklab, var(--color-mint) 60%, white 40%);
+  box-shadow: 0 0 8px color-mix(in oklab, var(--color-mint) 40%, white 60%);
+}
+
+@keyframes bubbleRise {
+  0% { transform: translate3d(0, 0, 0) scale(0.8); opacity: 0; }
+  10% { opacity: 0.5; }
+  50% { transform: translate3d(2vmin, -50vmin, 0) scale(1); opacity: 0.6; }
+  100% { transform: translate3d(-2vmin, -100vmin, 0) scale(0.9); opacity: 0; }
+}
+.hero-sparkles {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 30%, color-mix(in oklab, var(--color-pink) 65%, white 35%) 2px, transparent 3px),
+    radial-gradient(circle at 70% 60%, color-mix(in oklab, var(--color-turquoise) 70%, white 30%) 2px, transparent 3px),
+    radial-gradient(circle at 40% 80%, color-mix(in oklab, var(--color-mint) 70%, white 30%) 1.5px, transparent 2.5px),
+    radial-gradient(circle at 85% 25%, color-mix(in oklab, var(--color-beige) 80%, white 20%) 2px, transparent 3px);
+  background-repeat: no-repeat;
+  animation: sparkleDrift 30s linear infinite, sparklePulse 4s ease-in-out infinite;
+  opacity: 0.35;
+  mix-blend-mode: lighten;
+}
+
+@keyframes sparkleDrift {
+  0% { background-position: 0px 0px, 10px 20px, -10px 30px, 20px -10px; }
+  50% { background-position: 8px -6px, 0px 12px, 6px 18px, -12px 4px; }
+  100% { background-position: 0px 0px, 10px 20px, -10px 30px, 20px -10px; }
+}
+
+@keyframes sparklePulse {
+  0%, 100% { opacity: 0.28; }
+  50% { opacity: 0.38; }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .hero-blob,
+  .hero-sparkles {
+    animation: none !important;
+  }
+  .hero-layer,
+  .orbit,
+  .hero-bubble {
+    animation: none !important;
+    transform: none !important;
+  }
 }
