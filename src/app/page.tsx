@@ -7,6 +7,7 @@ import { Qualification } from "./components/sections/Qualification";
 import { Works } from "./components/sections/Works";
 import { Experience } from "./components/sections/Experience";
 import { Future } from "./components/sections/Future";
+import { Contact } from "./components/sections/Contact";
 
 export default function Home() {
   return (
@@ -21,6 +22,7 @@ export default function Home() {
         <Works />
         <Experience />
         <Future />
+        <Contact />
       </main>
     </>
   );
