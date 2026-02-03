@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { PROFILE } from "@/data/profile";
 import { cn } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -46,7 +47,7 @@ export const Header = () => {
                     aria-label="Scroll to top"
                     className="text-2xl font-bold tracking-tight cursor-pointer hover:text-[var(--color-turquoise)] transition-colors"
                 >
-                    Takuto Maekawa's Portfolio
+                    {PROFILE.nameEn}'s Portfolio
                 </button>
                 {/* ナビゲーション */}
                 <nav className="hidden md:flex items-center gap-8">

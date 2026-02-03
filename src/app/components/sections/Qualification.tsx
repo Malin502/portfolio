@@ -10,9 +10,9 @@ export function Qualification() {
             <div className="container mx-auto px-6 max-w-6xl">
                 <div className="text-center mb-12">
                     <div className="flex items-center justify-center gap-4">
-                        <div className="w-20 h-px bg-gray-300"></div>
-                        <h2 className="text-2xl md:text-3xl font-bold tracking-wider text-darkgray">QUALIFICATION</h2>
-                        <div className="w-20 h-px bg-gray-300"></div>
+                        <div className="w-15 h-px bg-gray-300"></div>
+                        <h2 className="text-xl md:text-2xl font-bold tracking-wider text-darkgray">QUALIFICATION</h2>
+                        <div className="w-15 h-px bg-gray-300"></div>
                     </div>
                 </div>
 

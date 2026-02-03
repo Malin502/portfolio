@@ -10,7 +10,6 @@ export const researchData: Research[] = [
             { title: "貢献", description: "これによりリアルタイムな欠測補完が可能" },
         ],
         overview: "HAR (Human Activity Recognition) の欠測補完技術の提案",
-        link: "https://example.com/paper",
     },
     {
         id: "2",
@@ -22,7 +21,6 @@ export const researchData: Research[] = [
             { title: "貢献", description: "多次元データに対してより効率的に因果発見が可能になる" },
         ],
         overview: "従属的因果発見手法NNRGLの提案",
-        link: "https://example.com/paper",
     },
     {
         id: "3",

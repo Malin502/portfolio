@@ -14,7 +14,7 @@ export const Footer = () => {
     <footer className="bg-[var(--color-darkgray)] text-white">
       <div className="container mx-auto px-6 py-8 flex items-center justify-between">
         <p className="text-lg font-semibold">
-          © {year} {PROFILE.nameEn}
+          © {year} {PROFILE.nameEn} All Rights Reserved.
         </p>
         <button
           type="button"

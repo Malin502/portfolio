@@ -16,7 +16,7 @@ export interface Hero {
 //プロフィール情報
 export interface Profile {
   nameEn: string;
-  nameJp: string
+  nameJp: string;
   description: string;
   history: string[];
   skills: string[];
