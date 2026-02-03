@@ -8,6 +8,7 @@ import { Works } from "./components/sections/Works";
 import { Experience } from "./components/sections/Experience";
 import { Future } from "./components/sections/Future";
 import { Contact } from "./components/sections/Contact";
+import { Footer } from "./components/layout/Footer";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <Future />
         <Contact />
       </main>
+      <Footer />
     </>
   );
 }

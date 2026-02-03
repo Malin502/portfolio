@@ -39,10 +39,15 @@ export const Header = () => {
             )}
         >
             <div className="container mx-auto px-6 flex items-center justify-between">
-                {/* 名称 */}
-                <Link href="/" className="text-2xl font-bold tracking-tight">
+                {/* 名称（クリックでトップスクロール） */}
+                <button
+                    type="button"
+                    onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+                    aria-label="Scroll to top"
+                    className="text-2xl font-bold tracking-tight cursor-pointer hover:text-[var(--color-turquoise)] transition-colors"
+                >
                     Takuto Maekawa's Portfolio
-                </Link>
+                </button>
                 {/* ナビゲーション */}
                 <nav className="hidden md:flex items-center gap-8">
                     {NAV_ITEMS.map((item) => (
