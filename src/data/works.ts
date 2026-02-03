@@ -6,7 +6,7 @@ export const worksData: Work[] = [
     title: "Takuto Maekawa's Portfolio",
     description:
     "いまご覧いただいているPortfolioサイトです。\nVercel上にデプロイしており、React, Next.js, TypeScript, Tailwind CSSを用いて作成しました。",
-    imageUrl: "", // 今回はプレースホルダーで表示
+    imageUrl: "", 
     tags: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     link: "http://localhost:3000",
     githubUrl: "https://github.com/Malin502/portfolio",

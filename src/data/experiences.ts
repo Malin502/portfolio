@@ -34,7 +34,7 @@ export const experiencesData: Experience[] = [
     title: "サービス創出ハッカソン型インターン",
     company: "Visionalグループ",
     description:
-      "チームでアイデア出しからプロトタイプ開発までを行うハッカソン型インターン。",
-    skills: ["Node.js", "Express", "AWS", "GitHub"],
+      "チームでアイデア出しからプロトタイプ作成までを行うハッカソン型インターン。",
+    skills: ["Node.js", "vercel", "GitHub"],
   }
 ];

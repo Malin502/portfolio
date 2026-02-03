@@ -77,7 +77,6 @@ export interface Research {
 //Future
 export interface FutureGoal {
   id: string;
-  label: "Now" | "Next" | "Future";
   title: string;
   description: string;
 }

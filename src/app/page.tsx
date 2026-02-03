@@ -6,6 +6,7 @@ import { Skill } from "./components/sections/Skill";
 import { Qualification } from "./components/sections/Qualification";
 import { Works } from "./components/sections/Works";
 import { Experience } from "./components/sections/Experience";
+import { Future } from "./components/sections/Future";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <Qualification />
         <Works />
         <Experience />
+        <Future />
       </main>
     </>
   );
