@@ -15,8 +15,8 @@ const nonsansJP = Noto_Sans_JP({
 });
 
 export const metadata: Metadata = {
-  title: "Takuto Maekawa's Portfolio",
-  description: "A portfolio website showcasing the projects and skills of Takuto Maekawa.",
+  title: "Malin's Portfolio",
+  description: "A portfolio website showcasing the projects and skills of Malin.",
 };
 
 export default function RootLayout({
