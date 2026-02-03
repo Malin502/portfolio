@@ -1,21 +1,28 @@
 import { Skill } from "@/types";
-import { 
-  Code2, 
-  Database, 
-  Globe, 
-  Shield, 
-  Cpu,
-  FileCode,
-  GitBranch,
-  Cloud
-} from "lucide-react";
+import {
+  SiPython,
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiTypescript,
+  SiReact,
+  SiTailwindcss,
+  SiAmazon,
+  SiGithub,
+  SiDocker,
+  SiBlender
+} from 'react-icons/si';
+
+import { FaJava, FaDatabase } from 'react-icons/fa';
+import { RiNextjsFill } from 'react-icons/ri';
+import { VscVscode } from 'react-icons/vsc';
 
 
 export const skillsData: Skill[] = [
   {
     name: "Python",
     tag: "Language",
-    icon: Code2,
+    icon: SiPython,
     level: 4,
     experience: "36 Months",
     description: "主に研究で使用。PytorchやNumpy、matplotlib、pandasなどのライブラリを用いてデータ分析や機械学習を行っています。",
@@ -23,7 +30,7 @@ export const skillsData: Skill[] = [
   {
     name: "Java",
     tag: "Language",
-    icon: Code2,
+    icon: FaJava,
     level: 5,
     experience: "48 Months",
     description: "大学で2年間学びました。アルバイトでSpring Bootを使用したバックエンド開発を行っています。",
@@ -31,49 +38,105 @@ export const skillsData: Skill[] = [
   {
     name: "HTML",
     tag: "Language",
-    icon: Globe,
+    icon: SiHtml5,
     level: 3,
     experience: "12 Months",
     description: "セマンティックHTMLを意識したマークアップが可能。",
   },
   {
+    name: "CSS",
+    tag: "Language",
+    icon: SiCss3,
+    level: 3,
+    experience: "12 Months",
+    description: "Tailwind CSSを用いたスタイリングが可能。レスポンシブデザインやアニメーションの実装経験があります。",
+  },
+  {
+    name: "JavaScript",
+    tag: "Language",
+    icon: SiJavascript,
+    level: 3,
+    experience: "10 Months",
+    description: "DOM操作や基本的なES6+の文法を理解しており、フロントエンド開発が可能です。",
+  },
+  {
+    name: "TypeScript",
+    tag: "Language",
+    icon: SiTypescript,
+    level: 2,
+    experience: "6 Months",
+    description: "型安全なコードを書くことができ、Next.jsと組み合わせたフロントエンド開発が可能です。",
+  },
+  {
     name: "React",
     tag: "Framework",
-    icon: Globe,
-    level: 2,
-    experience: "12 Months",
+    icon: SiReact,
+    level: 3,
+    experience: "10 Months",
     description: "Next.js、TypeScriptと組み合わせたフロントエンド開発ができます。",
+  },
+  {
+    name: "Next.js",
+    tag: "Framework",
+    icon: RiNextjsFill,
+    level: 2,
+    experience: "8 Months",
+    description: "SSRやSSGを活用したパフォーマンスの高いWebアプリケーション開発が可能です。",
+  },
+  {
+    name: "Tailwind CSS",
+    tag: "Framework",
+    icon: SiTailwindcss,
+    level: 2,
+    experience: "3 Months",
+    description: "ユーティリティファーストのCSSフレームワークを用いた効率的なスタイリングが可能です。",
+  },
+  {
+    name: "AWS",
+    tag: "Cloud",
+    icon: SiAmazon,
+    level: 3,
+    experience: "6 Months",
+    description: "EC2、S3、Lambda等を使用したインフラ構築。Aurora DB, Redshiftを用いたデータ分析基盤の構築経験があります。",
   },
   {
     name: "Database",
     tag: "Tool",
-    icon: Database,
+    icon: FaDatabase,
     level: 3,
     experience: "6 Months",
     description: "PostgreSQL、MySQLを使用したデータベース設計・運用。",
   },
   {
-    name: "AWS",
+    name: "Github",
     tag: "Tool",
-    icon: Cloud,
-    level: 3,
-    experience: "6 Months",
-    description: "EC2、S3、Lambda等を使用したインフラ構築。Redshiftを用いたデータ分析基盤の構築経験があります。",
-  },
-  {
-    name: "Git",
-    tag: "Tool",
-    icon: GitBranch,
+    icon: SiGithub,
     level: 4,
     experience: "40 Months",
     description: "チーム開発でのバージョン管理、GitHub Actionsを使用したCI/CDの経験があります。チーム開発で必要な知識は一通り理解しています。",
   },
   {
-    name: "AI/ML",
+    name: "VS Code",
+    tag: "Tool",
+    icon: VscVscode,
+    level: 5,
+    experience: "60 Months",
+    description: "プログラミングを始めたときからずっと使っています。豊富な拡張機能を活用して効率的にコーディングしています。最近はCursorに浮気しています。",
+  },
+  {
+    name: "Docker",
+    tag: "Tool",
+    icon: SiDocker,
+    level: 2,
+    experience: "8 Months",
+    description: "開発環境のコンテナ化のために主に使用しています。Docker Composeを用いたマルチコンテナ環境の利用経験もあります。",
+  },
+  {
+    name: "Blender",
     tag: "Other",
-    icon: Cpu,
+    icon: SiBlender,
     level: 3,
     experience: "15 Months",
-    description: "研究だけでなく個人的に強化学習や自然言語処理の勉強も行っています。",
+    description: "モデリングやアニメーションの作成が可能です。Boothにて3Dモデルを販売しています。",
   },
 ];

@@ -19,7 +19,7 @@ export const Skill = () => {
 
     return (
         <section id="skill" className="pt-24 pb-4 bg-background">
-            <div className="container mx-auto px-6 max-w-6xl">
+            <div className="container mx-auto px-8 max-w-8xl">
                 {/* セクションタイトル */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold tracking-wider mb-2">
@@ -31,10 +31,10 @@ export const Skill = () => {
                 
 
                 {/* スキルグリッド + 詳細表示 */}
-                <div className="grid grid-cols-1 lg:grid-cols-[3fr_2fr] gap-8 mb-20 items-start">
+                <div className="grid grid-cols-1 lg:grid-cols-[7fr_4fr] xl:grid-cols-[8fr_5fr] gap-8 mb-20 items-stretch">
                     {/* 左側: タグ + スキルアイコングリッド */}
                     <div className="flex flex-col gap-6">
-                        {/* タグフィルター（左上） */}
+                        {/* タグフィルター */}
                         <div className="flex flex-wrap gap-3">
                             {tags.map((tag) => (
                                 <button
@@ -52,8 +52,8 @@ export const Skill = () => {
                                 </button>
                             ))}
                         </div>
-                        {/* スキルグリッド（左下） */}
-                        <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                        {/* スキルグリッド*/}
+                        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
                         <AnimatePresence mode="popLayout">
                             {filteredSkills.map((skill) => {
                                 const Icon = skill.icon;
@@ -73,7 +73,7 @@ export const Skill = () => {
                                         }}
                                         onClick={() => setSelectedSkill(skill)}
                                         className={`
-                      aspect-square rounded-2xl p-6 flex flex-col items-center justify-center
+                      aspect-square rounded-2xl p-7 flex flex-col items-center justify-center
                       transition-all duration-300 border-2
                       ${isSelected
                                                 ? "bg-white border-turquoise shadow-lg"
@@ -81,8 +81,8 @@ export const Skill = () => {
                                             }
                     `}
                                     >
-                                        <Icon className="w-10 h-10 mb-2 text-gray-800" />
-                                        <span className="font-semibold text-sm text-center text-gray-800">{skill.name}</span>
+                                        <Icon className="w-10 h-10 mb-2 text-darkgray" />
+                                        <span className="font-semibold text-xs text-center text-darkgray whitespace-nowrap">{skill.name}</span>
                                     </motion.button>
                                 );
                             })}
@@ -100,17 +100,17 @@ export const Skill = () => {
                                 duration: 0.3,
                                 type: "spring",
                             }}
-                            className="bg-white rounded-2xl shadow-lg p-8 border border-gray-100 min-h-[400px]"
+                            className="self-stretch h-full bg-white rounded-2xl shadow-lg p-8 border border-gray-100"
                         >
                             {/* ヘッダー */}
                             <div className="flex items-start gap-4 mb-6">
-                                <div className="w-16 h-16 bg-turquoise/10 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <div className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0">
                                     {React.createElement(selectedSkill.icon, {
-                                        className: "w-10 h-10 text-turquoise",
+                                        className: "w-12 h-12 text-turquoise bg-white",
                                     })}
                                 </div>
                                 <div>
-                                    <h3 className="text-2xl font-bold mb-1 text-gray-800">{selectedSkill.name}</h3>
+                                    <h3 className="text-2xl font-bold mb-1 text-darkgray">{selectedSkill.name}</h3>
                                     <p className="text-sm text-gray-500">{selectedSkill.tag}</p>
                                 </div>
                             </div>
@@ -149,7 +149,7 @@ export const Skill = () => {
                 </div>
                 {/* 詳しくはこちらをご覧ください */}
                 <div className="text-center mb-4">
-                    <a href="#" className="text-turquoise hover:text-teal text-sm font-medium">
+                    <a href="https://stackshare.io/takuto.ponta/mystack" className="text-turquoise hover:text-teal text-sm font-medium">
                         詳しくはこちらをご覧ください
                     </a>
                 </div>
