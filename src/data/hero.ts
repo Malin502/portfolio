@@ -1,7 +1,7 @@
 import { Hero } from "@/types";
 
 export const HERO: Hero = {
-    nameEn: "Takuto Maekawa",
+    nameEn: "Malin",
     role: "AI / Security / Network",
-    comment: "異常を見つけるのが得意です。\n人の体調より、データのほうが先に気づくかもしれません。",
+    comment: "Stay Hungry, Stay Foolish. \n常に新しい技術に挑戦し続けます。",
 };

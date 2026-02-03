@@ -39,8 +39,9 @@ body {
 ::-webkit-scrollbar {
     width: 10px;
 }
+/* スクロールバーの背景（トラック）*/
 ::-webkit-scrollbar-track {
-  background: var(--color-beige);
+  background: #ffffff; /* 明示的に白へ。Firefoxは下の scrollbar-color を使用 */
 }
 ::-webkit-scrollbar-thumb {
   background: var(--color-turquoise);
@@ -48,6 +49,12 @@ body {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-teal);
+}
+
+/* Firefox 対応 */
+html {
+  scrollbar-color: var(--color-turquoise) #ffffff; /* thumb / track */
+  scrollbar-width: thin;
 }
 
 /* -----------------------------

@@ -24,8 +24,8 @@ export const Profile = () => {
                 </div>
             </div>
             
-            <h3 className="text-xl font-bold mb-1">{PROFILE.nameJp}</h3>
-            <p className="text-gray-500 mb-6">{PROFILE.nameEn}</p>
+            <h3 className="text-xl font-bold mb-1">{PROFILE.nameEn}</h3>
+            <p className="text-gray-500 mb-6">{PROFILE.nameJp}</p>
             {/* スキルタグ */}
             <div className="flex gap-2">
               {PROFILE.skills.map((skill, index) => (
