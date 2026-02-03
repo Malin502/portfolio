@@ -31,7 +31,7 @@ export const Skill = () => {
                 
 
                 {/* スキルグリッド + 詳細表示 */}
-                <div className="grid grid-cols-1 lg:grid-cols-[7fr_4fr] xl:grid-cols-[8fr_5fr] gap-8 mb-20 items-stretch">
+                <div className="grid grid-cols-1 lg:grid-cols-[7fr_4fr] xl:grid-cols-[8fr_5fr] gap-8 mb-15 items-stretch">
                     {/* 左側: タグ + スキルアイコングリッド */}
                     <div className="flex flex-col gap-6">
                         {/* タグフィルター */}
@@ -148,7 +148,7 @@ export const Skill = () => {
                     </AnimatePresence>
                 </div>
                 {/* 詳しくはこちらをご覧ください */}
-                <div className="text-center mb-4">
+                <div className="text-center mb-15">
                     <a href="https://stackshare.io/takuto.ponta/mystack" className="text-turquoise hover:text-teal text-sm font-medium">
                         詳しくはこちらをご覧ください
                     </a>

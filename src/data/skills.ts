@@ -7,13 +7,13 @@ import {
   SiTypescript,
   SiReact,
   SiTailwindcss,
-  SiAmazon,
+  SiMysql,
   SiGithub,
   SiDocker,
   SiBlender
 } from 'react-icons/si';
 
-import { FaJava, FaDatabase } from 'react-icons/fa';
+import { FaJava, FaAws} from 'react-icons/fa';
 import { RiNextjsFill } from 'react-icons/ri';
 import { VscVscode } from 'react-icons/vsc';
 
@@ -94,18 +94,18 @@ export const skillsData: Skill[] = [
   {
     name: "AWS",
     tag: "Cloud",
-    icon: SiAmazon,
+    icon: FaAws,
     level: 3,
     experience: "6 Months",
     description: "EC2、S3、Lambda等を使用したインフラ構築。Aurora DB, Redshiftを用いたデータ分析基盤の構築経験があります。",
   },
   {
-    name: "Database",
+    name: "MySQL",
     tag: "Tool",
-    icon: FaDatabase,
-    level: 3,
+    icon: SiMysql,
+    level: 2,
     experience: "6 Months",
-    description: "PostgreSQL、MySQLを使用したデータベース設計・運用。",
+    description: "標準レベルでのSQLクエリの作成、データベース設計が可能です。",
   },
   {
     name: "Github",
