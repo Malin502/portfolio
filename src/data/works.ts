@@ -3,7 +3,7 @@ import { Work } from "@/types";
 export const worksData: Work[] = [
   {
     id: "Portfolio-Website",
-    title: "Takuto Maekawa's Portfolio",
+    title: "Malin's Portfolio",
     description:
     "いまご覧いただいているPortfolioサイトです。\nVercel上にデプロイしており、React, Next.js, TypeScript, Tailwind CSSを用いて作成しました。",
     imageUrl: "", 
