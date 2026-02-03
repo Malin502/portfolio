@@ -1,0 +1,6 @@
+# ローカル専用の設定。Vercel では環境変数を使ってください。
+# このファイルは .gitignore 済みで Git にコミットされません。
+
+# 例:
+contactToEmail: "ta.maekawa0478@gmail.com"
+resendApiKey: "re_PAVRjdC8_9LHALTuUKNKJ4NM7wGhsPsPE"
