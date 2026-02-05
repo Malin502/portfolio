@@ -55,9 +55,9 @@ export const Works = () => {
             >
               {/* サムネイル領域 */}
               <div className="relative h-44 bg-gray-200 overflow-hidden">
-                {work.imageUrl && (
+                {work.imagePath && (
                   <Image
-                    src={work.imageUrl}
+                    src={work.imagePath}
                     alt={work.title}
                     fill
                     className="object-cover"
