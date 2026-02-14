@@ -55,7 +55,7 @@ export interface Work {
   id: string;
   title: string;
   description: string;
-  imageUrl: string;
+  imagePath?: string;
   tags: string[];
   link?: string;
   githubUrl?: string;
