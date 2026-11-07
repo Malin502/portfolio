@@ -4,6 +4,7 @@ import YAML from "yaml";
 
 type AppConfig = {
   contactToEmail?: string;
+  contactFromEmail?: string;
   resendApiKey?: string;
 };
 
@@ -23,6 +24,8 @@ export function getConfig(): Required<AppConfig> {
       fileConfig = {
         contactToEmail:
           parsed?.contactToEmail || parsed?.contact?.toEmail || undefined,
+        contactFromEmail:
+          parsed?.contactFromEmail || parsed?.contact?.fromEmail || undefined,
         resendApiKey:
           parsed?.resendApiKey || parsed?.resend?.apiKey || undefined,
       };
@@ -35,6 +38,10 @@ export function getConfig(): Required<AppConfig> {
   return {
     contactToEmail:
       process.env.CONTACT_TO_EMAIL || fileConfig.contactToEmail || "example@example.com",
+    // Sender on the Resend-verified custom domain (malin502.dev must be
+    // verified at resend.com/domains). Override with CONTACT_FROM_EMAIL.
+    contactFromEmail:
+      process.env.CONTACT_FROM_EMAIL || fileConfig.contactFromEmail || "contact@malin502.dev",
     resendApiKey:
       process.env.RESEND_API_KEY || fileConfig.resendApiKey || "",
   };
