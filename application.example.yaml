@@ -1,0 +1,6 @@
+# Copy this file to application.yaml for LOCAL development only.
+# application.yaml is git-ignored and must never be committed.
+# In production (Vercel), set these as environment variables instead:
+#   RESEND_API_KEY / CONTACT_TO_EMAIL
+contactToEmail: "you@example.com"
+resendApiKey: "re_xxxxxxxxxxxx"
