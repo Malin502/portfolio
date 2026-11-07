@@ -7,6 +7,10 @@ type AppConfig = {
   resendApiKey?: string;
 };
 
+// Secrets are provided via environment variables in production (Vercel:
+// RESEND_API_KEY / CONTACT_TO_EMAIL). A local, git-ignored application.yaml
+// may be used for development only, and environment variables always take
+// precedence over it so a stale local file can never override production.
 export function getConfig(): Required<AppConfig> {
   const cwd = process.cwd();
   const yamlPath = path.join(cwd, "application.yaml");
@@ -23,15 +27,15 @@ export function getConfig(): Required<AppConfig> {
           parsed?.resendApiKey || parsed?.resend?.apiKey || undefined,
       };
     } catch (e) {
-      // 読み込み失敗時は環境変数にフォールバック
+      // 読み込み失敗時は環境変数のみにフォールバック
       fileConfig = {};
     }
   }
 
   return {
     contactToEmail:
-      fileConfig.contactToEmail || process.env.CONTACT_TO_EMAIL || "example@example.com",
+      process.env.CONTACT_TO_EMAIL || fileConfig.contactToEmail || "example@example.com",
     resendApiKey:
-      fileConfig.resendApiKey || process.env.RESEND_API_KEY || "",
+      process.env.RESEND_API_KEY || fileConfig.resendApiKey || "",
   };
 }
