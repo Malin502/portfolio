@@ -1,16 +1,21 @@
 import React from "react";
 import Image from "next/image";
 
+import { getTranslations } from "next-intl/server";
+
 import { PROFILE } from "@/data/profile";
 
-export const Profile = () => {
+const HISTORY_KEYS = ["1", "2", "3", "4"] as const;
+
+export const Profile = async () => {
+  const t = await getTranslations("Profile");
   return (
     <section id="profile" className="py-24 bg-white">
       <div className="container mx-auto px-6 max-w-6xl">
         {/* セクションタイトル */}
         <div className="text-center mb-16">
           <h2 className="text-3xl font-bold tracking-wider inline-block border-b-4 border-turquoise pb-2">
-            PROFILE
+            {t("title")}
           </h2>
         </div>
         <div className="flex flex-col md:flex-row gap-12 items-start justify-center">
@@ -20,7 +25,7 @@ export const Profile = () => {
             <div className="relative w-60 h-60 lg:w-50 lg:h-50 mb-8">
                 <div className="absolute inset-0 bg-gray-200 rounded-full animate-blob mix-blend-multiply filter blur-xl opacity-70"></div>
                 <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gray-100">
-                    <Image src="/images/hero.png" alt="Hero" fill className="object-cover" priority />
+                    <Image src="/images/hero.png" alt={t("imageAlt")} fill className="object-cover" priority />
                 </div>
             </div>
             
@@ -40,26 +45,24 @@ export const Profile = () => {
             {/* Introduction */}
             <div>
               <h3 className="text-xl font-bold text-turquoise border-l-4 border-turquoise pl-3 mb-3">
-                Introduction
+                {t("introduction")}
               </h3>
               <p className="text-muted-foreground leading-loose whitespace-pre-wrap">
-                {PROFILE.description}
+                {t("description")}
               </p>
             </div>
             {/* History */}
             <div>
               <h3 className="text-xl font-bold text-turquoise border-l-4 border-turquoise pl-3 mb-3">
-                History
+                {t("history")}
               </h3>
-              {PROFILE.history && PROFILE.history.length > 0 ? (
-                <ul className="list-disc pl-6 history-list">
-                  {PROFILE.history.map((item, idx) => (
-                    <li key={idx} className="mb-1">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              ) : null}
+              <ul className="list-disc pl-6 history-list">
+                {HISTORY_KEYS.map((key) => (
+                  <li key={key} className="mb-1">
+                    {t(`historyItems.${key}`)}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>

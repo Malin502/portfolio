@@ -2,16 +2,18 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import { useTranslations } from 'next-intl';
 import { qualificationsData } from '@/data/qualifications';
 
 export function Qualification() {
+    const t = useTranslations('Qualifications');
     return (
         <section id="qualification" className="pt-2 pb-24 bg-background">
             <div className="container mx-auto px-6 max-w-6xl">
                 <div className="text-center mb-12">
                     <div className="flex items-center justify-center gap-4">
                         <div className="w-15 h-px bg-gray-300"></div>
-                        <h2 className="text-xl md:text-2xl font-bold tracking-wider text-darkgray">QUALIFICATION</h2>
+                        <h2 className="text-xl md:text-2xl font-bold tracking-wider text-darkgray">{t('title')}</h2>
                         <div className="w-15 h-px bg-gray-300"></div>
                     </div>
                 </div>
@@ -35,7 +37,7 @@ export function Qualification() {
 
                                     <div className="flex-grow">
                                         <h3 className="text-base font-bold text-dark-gray mb-1">
-                                            {qual.name}
+                                            {t(`items.${qual.id}`)}
                                         </h3>
                                         <div className="text-gray-500 font-medium text-sm">
                                             {qual.date}

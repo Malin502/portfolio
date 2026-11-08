@@ -1,21 +1,23 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { PROFILE } from "@/data/profile";
 import { cn } from "@/lib/utils";
+import { LocaleSwitcher } from "./LocaleSwitcher";
 
 const NAV_ITEMS = [
-    { label: "PROFILE", href: "#profile" },
-    { label: "RESEARCH", href: "#research" },
-    { label: "SKILL", href: "#skill" },
-    { label: "WORKS", href: "#works" },
-    { label: "EXPERIENCE", href: "#experience" },
-    { label: "FUTURE", href: "#future" },
-    { label: "CONTACT", href: "#contact" }
-];
+    { key: "profile", href: "#profile" },
+    { key: "research", href: "#research" },
+    { key: "skill", href: "#skill" },
+    { key: "works", href: "#works" },
+    { key: "experience", href: "#experience" },
+    { key: "future", href: "#future" },
+    { key: "contact", href: "#contact" }
+] as const;
 
 export const Header = () => {
+    const t = useTranslations("Header");
     const [isScrolled, setIsScrolled] = useState(false);
 
     useEffect(() => {
@@ -44,27 +46,25 @@ export const Header = () => {
                 <button
                     type="button"
                     onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-                    aria-label="Scroll to top"
+                    aria-label={t("scrollTop")}
                     className="text-2xl font-bold tracking-tight cursor-pointer hover:text-[var(--color-turquoise)] transition-colors"
                 >
-                    {PROFILE.nameEn}'s Portfolio
+                    {t("title", { name: PROFILE.nameEn })}
                 </button>
                 {/* ナビゲーション */}
                 <nav className="hidden md:flex items-center gap-8">
                     {NAV_ITEMS.map((item) => (
-                        <Link
-                            key={item.label}
+                        <a
+                            key={item.key}
                             href={item.href}
                             className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
                         >
-                            {item.label}
+                            {t(`nav.${item.key}`)}
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-turquoise transition-all group-hover:w-full" />
-                        </Link>
+                        </a>
                     ))}
-                    {/* 言語切り替えボタン */}
-                    <button className="bg-black text-white text-xs px-3 py-1.5 rounded ml-4 font-bold">
-                        JA / EN
-                    </button>
+                    {/* 言語切り替え */}
+                    <LocaleSwitcher />
                 </nav>
             </div>
         </header>

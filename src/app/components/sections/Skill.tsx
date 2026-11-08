@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Star } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { skillsData } from "@/data/skills";
-import { qualificationsData } from "@/data/qualifications";
 
 export const Skill = () => {
+    const t = useTranslations("Skills");
     const [selectedSkill, setSelectedSkill] = useState(skillsData[0]);
     const [selectedTag, setSelectedTag] = useState("All");
 
@@ -23,7 +24,7 @@ export const Skill = () => {
                 {/* セクションタイトル */}
                 <div className="text-center mb-12">
                     <h2 className="text-3xl font-bold tracking-wider mb-2">
-                        SKILL
+                        {t("title")}
                     </h2>
                     <div className="w-12 h-1 bg-turquoise mx-auto"></div>
                 </div>
@@ -117,7 +118,7 @@ export const Skill = () => {
 
                             {/* レベル */}
                             <div className="mb-6">
-                                <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">Level</p>
+                                <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">{t("level")}</p>
                                 <div className="flex gap-1">
                                     {[1, 2, 3, 4, 5].map((star) => (
                                         <Star
@@ -133,15 +134,15 @@ export const Skill = () => {
 
                             {/* 経験期間 */}
                             <div className="mb-6">
-                                <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">Experience</p>
+                                <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">{t("experience")}</p>
                                 <p className="text-xl font-bold text-gray-800">{selectedSkill.experience}</p>
                             </div>
 
                             {/* 説明 */}
                             <div>
-                                <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">Description</p>
+                                <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">{t("description")}</p>
                                 <p className="text-sm text-gray-700 leading-relaxed">
-                                    {selectedSkill.description}
+                                    {t(`items.${selectedSkill.id}`)}
                                 </p>
                             </div>
                         </motion.div>
@@ -150,7 +151,7 @@ export const Skill = () => {
                 {/* 詳しくはこちらをご覧ください */}
                 <div className="text-center mb-15">
                     <a href="https://stackshare.io/takuto.ponta/mystack" className="text-turquoise hover:text-teal text-sm font-medium">
-                        詳しくはこちらをご覧ください
+                        {t("moreInfo")}
                     </a>
                 </div>
             </div>

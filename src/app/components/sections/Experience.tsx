@@ -2,12 +2,15 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Briefcase, ChevronDown } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { experiencesData } from "@/data/experiences";
+import type { ExperienceId } from "@/types";
 
 export const Experience = () => {
-  const [openSet, setOpenSet] = useState<Set<string>>(new Set());
+  const t = useTranslations("Experience");
+  const [openSet, setOpenSet] = useState<Set<ExperienceId>>(new Set());
 
-  const toggle = (id: string) => {
+  const toggle = (id: ExperienceId) => {
     setOpenSet((prev) => {
       const next = new Set(prev);
       if (next.has(id)) next.delete(id);
@@ -16,7 +19,7 @@ export const Experience = () => {
     });
   };
 
-  const onKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, id: string) => {
+  const onKeyDown = (e: React.KeyboardEvent<HTMLButtonElement>, id: ExperienceId) => {
     if (e.key === "Enter" || e.key === " ") {
       e.preventDefault();
       toggle(id);
@@ -28,7 +31,7 @@ export const Experience = () => {
       <div className="container mx-auto px-6 max-w-6xl">
         {/* セクションタイトル */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-wider mb-2">EXPERIENCE</h2>
+          <h2 className="text-3xl font-bold tracking-wider mb-2">{t("title")}</h2>
           <div className="w-12 h-1 bg-turquoise mx-auto"></div>
         </div>
 
@@ -65,11 +68,11 @@ export const Experience = () => {
                       <div className="flex flex-col md:flex-row md:items-center md:gap-4 min-w-0">
                         <div className="flex items-center gap-2 text-gray-600 text-sm font-medium shrink-0">
                           <Briefcase className="w-4 h-4" />
-                          <span>{exp.period}</span>
+                          <span>{t(`items.${exp.id}.period`)}</span>
                         </div>
-                        <h3 className="text-base md:text-lg font-bold truncate">{exp.title}</h3>
+                        <h3 className="text-base md:text-lg font-bold truncate">{t(`items.${exp.id}.title`)}</h3>
                         <span className="text-xs md:text-sm px-2.5 py-1 rounded-full bg-gray-100 text-gray-700 border border-gray-200 font-semibold shrink-0">
-                          {exp.company}
+                          {t(`items.${exp.id}.company`)}
                         </span>
                       </div>
                       <ChevronDown
@@ -92,7 +95,7 @@ export const Experience = () => {
                         >
                           <div className="px-6 pb-6 pt-0">
                             <p className="text-gray-600 text-sm leading-relaxed mb-4 whitespace-pre-wrap">
-                              {exp.description}
+                              {t(`items.${exp.id}.description`)}
                             </p>
                             <div className="flex flex-wrap gap-2">
                               {exp.skills.map((s, i) => (

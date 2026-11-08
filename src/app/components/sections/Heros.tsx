@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { ArrowRight, Github } from "lucide-react";
 
@@ -10,6 +10,7 @@ import { HERO } from "@/data/hero";
 import AnimatedBackground from "@/app/components/ui/AnimatedBackground";
 
 export const Hero = () => {
+    const t = useTranslations("Hero");
     return (
         <section className="min-h-screen flex items-center justify-center bg-background relative overflow-hidden pt-20 lg:pt-0">
             {/* 背景レイヤー */}
@@ -25,7 +26,7 @@ export const Hero = () => {
 
                     {/* 肩書き */}
                     <h2 className="text-turquoise font-bold text-lg mb-4 tracking-wide">
-                        {HERO.role}
+                        {t("role")}
                     </h2>
 
                     {/* 名前 */}
@@ -35,26 +36,26 @@ export const Hero = () => {
 
                     {/* ひとこと */}
                     <p className="text-muted-foreground text-lg mb-8 leading-relaxed max-w-lg whitespace-pre-wrap">
-                        {HERO.comment}
+                        {t("comment")}
                     </p>
 
                     {/* ボタン */}
                     <div className="flex flex-wrap gap-4">
                         {/*作品を見る*/}
-                        <Link href="#works" className="px-6 py-3 bg-turquoise text-white font-bold rounded-full hover:bg-teal transition-colors shadow-lg shadow-turquoise/20 flex items-center gap-2">
-                            作品を見る
+                        <a href="#works" className="px-6 py-3 bg-turquoise text-white font-bold rounded-full hover:bg-teal transition-colors shadow-lg shadow-turquoise/20 flex items-center gap-2">
+                            {t("viewWorks")}
                             <ArrowRight size={18} />
-                        </Link>
+                        </a>
 
                         {/*スキルセットを見る*/}
-                        <Link href="#skill" className="px-6 py-3 border-2 border-turquoise text-turquoise font-bold rounded-full hover:bg-turquoise/10 transition-colors">
-                            スキルセット
-                        </Link>
+                        <a href="#skill" className="px-6 py-3 border-2 border-turquoise text-turquoise font-bold rounded-full hover:bg-turquoise/10 transition-colors">
+                            {t("viewSkills")}
+                        </a>
 
                         {/* Githubボタン */}
                         <a href="https://github.com/Malin502" target="_blank" rel="noopener noreferrer" className="px-6 py-3 border-2 border-gray-300 text-gray-600 font-bold rounded-full hover:border-black hover:text-black transition-colors flex items-center gap-2">
                             <Github size={18} />
-                            Github
+                            {t("github")}
                         </a>
                     </div>
                 </motion.div>
@@ -70,7 +71,7 @@ export const Hero = () => {
                         <div className="absolute inset-0 bg-gray-200 rounded-full animate-blob mix-blend-multiply filter blur-xl opacity-70"></div>
                         {/* 画像本体 */}
                         <div className="relative w-full h-full rounded-full overflow-hidden border-4 border-white shadow-2xl bg-gray-100">
-                            <Image src="/images/hero.png" alt="Hero" fill className="object-cover" priority />
+                            <Image src="/images/hero.png" alt={t("imageAlt")} fill className="object-cover" priority />
                         </div>
                     </div>
                 </motion.div>

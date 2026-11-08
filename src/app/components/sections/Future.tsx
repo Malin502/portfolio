@@ -1,9 +1,11 @@
 "use client";
 import { motion } from "framer-motion";
-import { futureVision, futureGoals } from "@/data/future";
+import { useTranslations } from "next-intl";
+import { futureGoals } from "@/data/future";
 import { Sparkles, Sprout, Rocket, Sun } from "lucide-react";
 
 export const Future = () => {
+  const t = useTranslations("Future");
   const labelConfig: Record<string, {
     icon: React.ElementType;
     badgeClass: string;
@@ -30,7 +32,7 @@ export const Future = () => {
       <div className="container mx-auto px-4 md:px-6 max-w-7xl">
         {/* セクションタイトル */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-wider mb-2">FUTURE</h2>
+          <h2 className="text-3xl font-bold tracking-wider mb-2">{t("title")}</h2>
           <div className="w-12 h-1 bg-turquoise mx-auto"></div>
         </div>
 
@@ -46,7 +48,7 @@ export const Future = () => {
             <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-16 h-16 rounded-full bg-mint/25 shadow-sm ring-4 ring-white flex items-center justify-center">
               <Sun className="w-7 h-7 text-teal" aria-hidden />
             </div>
-            <p className="mt-4 md:mt-5 text-2xl md:text-3xl font-semibold">{futureVision}</p>
+            <p className="mt-4 md:mt-5 text-2xl md:text-3xl font-semibold">{t("vision")}</p>
           </div>
         </motion.div>
 
@@ -68,8 +70,8 @@ export const Future = () => {
                     return <Icon className="w-5 h-5 text-teal" aria-hidden />;
                   })()}
                 </div>
-                <h3 className="text-lg md:text-xl font-bold mb-2 text-darkgray">{goal.title}</h3>
-                <p className="text-xs md:text-sm text-gray-600 leading-relaxed max-w-[68ch]">{goal.description}</p>
+                <h3 className="text-lg md:text-xl font-bold mb-2 text-darkgray">{t(`goals.${goal.id}.title`)}</h3>
+                <p className="text-xs md:text-sm text-gray-600 leading-relaxed max-w-[68ch]">{t(`goals.${goal.id}.description`)}</p>
               </div>
             </motion.div>
           ))}
