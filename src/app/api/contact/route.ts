@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     const toAddress = cfg.contactToEmail;
 
     const result = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
+      from: `Portfolio Contact <${cfg.contactFromEmail}>`,
       to: [toAddress],
       replyTo: email,
       subject: `Portfolio contact from ${name}`,
