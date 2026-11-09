@@ -1,0 +1,201 @@
+{
+  "Header": {
+    "title": "{name}'s Portfolio",
+    "scrollTop": "Scroll to top",
+    "nav": {
+      "profile": "PROFILE",
+      "research": "RESEARCH",
+      "skill": "SKILL",
+      "works": "WORKS",
+      "experience": "EXPERIENCE",
+      "future": "FUTURE",
+      "contact": "CONTACT"
+    },
+    "language": {
+      "label": "Language",
+      "ja": "JA",
+      "en": "EN"
+    }
+  },
+  "Hero": {
+    "role": "AI / Security / Network",
+    "comment": "Stay Hungry, Stay Foolish. \nI keep taking on new technologies.",
+    "viewWorks": "View Works",
+    "viewSkills": "Skill Set",
+    "github": "Github",
+    "imageAlt": "Hero"
+  },
+  "Profile": {
+    "title": "PROFILE",
+    "introduction": "Introduction",
+    "history": "History",
+    "imageAlt": "Hero",
+    "description": "I started learning programming in junior high school, and now I conduct research in AI, security, and networking.\nI call anomaly detection and data analysis my specialties.\nBeyond AI, I am also taking on web development and cloud infrastructure.",
+    "historyItems": {
+      "1": "Currently enrolled in the Department of Information Systems Design (admitted April 2023)",
+      "2": "Developed several AI-related projects on my own",
+      "3": "Part-time development experience (Java, Spring Boot)",
+      "4": "Co-authored a paper accepted at an international conference"
+    }
+  },
+  "Research": {
+    "title": "RESEARCH",
+    "overviewFallback": "Overview",
+    "linkLabel": "View paper details and slides",
+    "labels": {
+      "issue": "Problem",
+      "method": "Method",
+      "experiment": "Experiment",
+      "contribution": "Contribution"
+    },
+    "items": {
+      "1": {
+        "title": "Proposal of a Missing-Data Imputation Technique for HAR (Human Activity Recognition)",
+        "issue": "Prediction accuracy of existing models degrades when data is missing",
+        "method": "An imputation method combining an autoencoder and a CGAN",
+        "experiment": "Achieved comparable prediction accuracy even with missing data",
+        "contribution": "This enables real-time imputation of missing data",
+        "overview": "Proposal of a Missing-Data Imputation Technique for HAR (Human Activity Recognition)"
+      },
+      "2": {
+        "title": "Proposal of NNRGL, a Dependent Causal Discovery Method",
+        "issue": "Existing causal discovery methods struggle with high-dimensional analysis and tend to have low accuracy",
+        "method": "A causal discovery method combining a neural network and group lasso",
+        "experiment": "Achieved highly accurate results more easily than existing causal discovery methods",
+        "contribution": "Enables more efficient causal discovery on high-dimensional data",
+        "overview": "Proposal of NNRGL, a Dependent Causal Discovery Method"
+      },
+      "3": {
+        "title": "Proposal of a Method that Treats Attacks in Network Flows as Imbalanced Data",
+        "issue": "Cyber attacks rarely occur, so training an AI on them yields imbalanced data and degrades performance",
+        "method": "Aims to improve accuracy by treating cyber attacks as imbalanced data",
+        "experiment": "Experiments are in progress",
+        "contribution": "Experiments are in progress",
+        "overview": "No detailed content is available yet."
+      }
+    }
+  },
+  "Works": {
+    "title": "WORKS",
+    "openGithub": "Open GitHub repository",
+    "openSite": "Open project site",
+    "items": {
+      "Portfolio-Website": {
+        "title": "Malin's Portfolio",
+        "description": "This is the portfolio site you are viewing right now.\nIt is deployed on Vercel and built with Next.js and Tailwind CSS.\nCI/CD is also implemented with GitHub Actions."
+      },
+      "Tic-Tac-Toe-AI": {
+        "title": "Tic Tac Toe AI",
+        "description": "I implemented in Python an AI agent that learns tic-tac-toe through reinforcement learning. It acquires an optimal strategy through self-play using Q-learning. This is the first reinforcement learning model I built."
+      },
+      "recognize-handwritten-digits": {
+        "title": "Handwritten Letter Recognition",
+        "description": "I built a model that recognizes handwritten English letters. It achieves high-accuracy recognition using a neural network. Training and evaluation were done with the EMNIST dataset."
+      }
+    }
+  },
+  "Experience": {
+    "title": "EXPERIENCE",
+    "items": {
+      "exp-001": {
+        "period": "2025.07 - Present",
+        "title": "Backend Engineer",
+        "company": "Nintendo Co., Ltd.",
+        "description": "Responsible for developing and maintaining an internal management tool built with Spring Boot. Worked on API design, database design, and performance optimization.\nAlso experienced in building and operating development environments with Docker and using various AWS services."
+      },
+      "exp-002": {
+        "period": "2023.10 - Present",
+        "title": "ML Engineer / Research Assistant",
+        "company": "University Lab",
+        "description": "Researched and developed a missing-data imputation model for HAR (human activity recognition). Responsible for experiment design, evaluation, and visualization using autoencoders and CGANs.\nResponsible for the PyTorch implementation and evaluation of a neural-network-based causal discovery method.\nEngaged in data preprocessing, model implementation, and paper writing using Python."
+      },
+      "exp-003": {
+        "period": "2025.09",
+        "title": "Short-term Web Development Internship",
+        "company": "MediaLink Co., Ltd.",
+        "description": "A development internship building a voice-summarization web application with Spring Boot and React.\nResponsible for designing and implementing backend APIs and integrating them with the frontend."
+      },
+      "exp-004": {
+        "period": "2025.09",
+        "title": "Service Creation Hackathon-style Internship",
+        "company": "Visional Group",
+        "description": "A hackathon-style internship where our team went from ideation to prototype creation."
+      }
+    }
+  },
+  "Skills": {
+    "title": "SKILL",
+    "level": "Level",
+    "experience": "Experience",
+    "description": "Description",
+    "moreInfo": "See here for more details",
+    "items": {
+      "python": "Mainly used for research. I do data analysis and machine learning using libraries such as PyTorch, NumPy, matplotlib, and pandas.",
+      "java": "Studied for two years at university. I do backend development with Spring Boot in a part-time job.",
+      "html": "Able to write markup with semantic HTML in mind.",
+      "css": "Able to style with Tailwind CSS. I have experience implementing responsive design and animations.",
+      "javascript": "I understand DOM manipulation and basic ES6+ syntax, and can do frontend development.",
+      "typescript": "I can write type-safe code and do frontend development in combination with Next.js.",
+      "react": "I can do frontend development in combination with Next.js and TypeScript.",
+      "nextjs": "Able to develop high-performance web applications leveraging SSR and SSG.",
+      "tailwind": "Able to style efficiently using a utility-first CSS framework.",
+      "aws": "Infrastructure building with EC2, S3, Lambda, and more. I have experience building a data analytics platform with Aurora DB and Redshift.",
+      "mysql": "Able to write standard-level SQL queries and design databases.",
+      "github": "I have experience with version control in team development and CI/CD using GitHub Actions. I understand the knowledge needed for team development.",
+      "vscode": "I have used it since I first started programming. I code efficiently with its rich extensions. Recently I have been cheating on it with Cursor.",
+      "docker": "Mainly used to containerize development environments. I also have experience with multi-container environments using Docker Compose.",
+      "blender": "Able to create models and animations. I sell 3D models on Booth."
+    }
+  },
+  "Qualifications": {
+    "title": "QUALIFICATION",
+    "items": {
+      "AP": "Applied Information Technology Engineer Examination",
+      "TOEIC": "TOEIC 715",
+      "DL-G": "JDLA Deep Learning for GENERAL (G Certification)",
+      "FE": "Fundamental Information Technology Engineer Examination"
+    }
+  },
+  "Future": {
+    "title": "FUTURE",
+    "vision": "Delivering trustworthy AI behind the scenes of society",
+    "goals": {
+      "1": {
+        "title": "Explainability",
+        "description": "High accuracy alone does not make an AI that people can use with confidence. Why did it reach that decision, and how far can it be trusted? I value being able to explain the behavior of AI."
+      },
+      "2": {
+        "title": "Robust Architecture",
+        "description": "The less visible a system is, the less it can afford to stop. Rather than temporary accuracy or trends, I value designs built to keep running for the long term."
+      },
+      "3": {
+        "title": "Full Stack Perspective",
+        "description": "Building a model is not the goal. Where is that AI used, who does it reach, and how is it operated? Taking backend and infrastructure into view as well, I aim for AI that works in society."
+      }
+    }
+  },
+  "Contact": {
+    "title": "CONTACT",
+    "intro1": "Thank you for reading to the end. I would be glad if this site helped you get to know me, even a little.",
+    "intro2": "If you have any comments about this site or about me, please use the form below.",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Comment",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "you@example.com",
+    "messagePlaceholder": "Please enter your message",
+    "send": "SEND",
+    "sending": "SENDING...",
+    "success": "Sent. Thank you!",
+    "failure": "Failed to send"
+  },
+  "Meta": {
+    "title": "Malin's Portfolio",
+    "description": "A portfolio website showcasing the projects and skills of Malin."
+  },
+  "Common": {
+    "copyright": "© {year} {name} All Rights Reserved.",
+    "top": "TOP",
+    "backToTop": "Back to top"
+  }
+}

@@ -1,9 +1,11 @@
 "use client";
 
 import React from "react";
+import { useTranslations } from "next-intl";
 import { PROFILE } from "@/data/profile";
 
 export const Footer = () => {
+  const t = useTranslations("Common");
   const year = new Date().getFullYear();
 
   const handleTopClick = () => {
@@ -14,15 +16,15 @@ export const Footer = () => {
     <footer className="bg-[var(--color-darkgray)] text-white">
       <div className="container mx-auto px-6 py-8 flex items-center justify-between">
         <p className="text-lg font-semibold">
-          © {year} {PROFILE.nameEn} All Rights Reserved.
+          {t("copyright", { year: String(year), name: PROFILE.nameEn })}
         </p>
         <button
           type="button"
           onClick={handleTopClick}
           className="text-white font-bold tracking-wider hover:opacity-80 transition-opacity"
-          aria-label="Back to top"
+          aria-label={t("backToTop")}
         >
-          TOP
+          {t("top")}
         </button>
       </div>
     </footer>

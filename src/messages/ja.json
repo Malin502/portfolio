@@ -1,0 +1,201 @@
+{
+  "Header": {
+    "title": "{name}'s Portfolio",
+    "scrollTop": "Scroll to top",
+    "nav": {
+      "profile": "PROFILE",
+      "research": "RESEARCH",
+      "skill": "SKILL",
+      "works": "WORKS",
+      "experience": "EXPERIENCE",
+      "future": "FUTURE",
+      "contact": "CONTACT"
+    },
+    "language": {
+      "label": "言語",
+      "ja": "JA",
+      "en": "EN"
+    }
+  },
+  "Hero": {
+    "role": "AI / Security / Network",
+    "comment": "Stay Hungry, Stay Foolish. \n常に新しい技術に挑戦し続けます。",
+    "viewWorks": "作品を見る",
+    "viewSkills": "スキルセット",
+    "github": "Github",
+    "imageAlt": "Hero"
+  },
+  "Profile": {
+    "title": "PROFILE",
+    "introduction": "Introduction",
+    "history": "History",
+    "imageAlt": "Hero",
+    "description": "中学生のころにプログラミングに学び始め、今はAI、セキュリティ、ネットワークに興味があり研究を行っています。\n特に異常検知やデータ分析が得意分野だと自称しています。\nAIだけでなくWeb開発やクラウドインフラにも挑戦中。",
+    "historyItems": {
+      "1": "情報システムデザイン学科に在籍中（2023年4月入学）",
+      "2": "個人でAI関連のプロジェクトを複数開発",
+      "3": "開発系アルバイト経験あり（Java, Spring Boot）",
+      "4": "共著者として国際会議に論文採択経験あり"
+    }
+  },
+  "Research": {
+    "title": "RESEARCH",
+    "overviewFallback": "Overview",
+    "linkLabel": "論文詳細・スライドを見る",
+    "labels": {
+      "issue": "課題",
+      "method": "手法",
+      "experiment": "実験",
+      "contribution": "貢献"
+    },
+    "items": {
+      "1": {
+        "title": "HAR (Human Activity Recognition) の欠測補完技術の提案",
+        "issue": "既存モデルでは欠測がある場合に予測精度が低下する",
+        "method": "オートエンコーダとCGANを組み合わせた欠測補完手法",
+        "experiment": "欠測がある場合でも同程度の予測精度を達成",
+        "contribution": "これによりリアルタイムな欠測補完が可能",
+        "overview": "HAR (Human Activity Recognition) の欠測補完技術の提案"
+      },
+      "2": {
+        "title": "従属的因果発見手法NNRGLの提案",
+        "issue": "既存の因果発見手法は多次元の解析が困難であり、かつ精度が低い傾向がある",
+        "method": "ニューラルネットワークとグループラッソを組み合わせた因果発見手法",
+        "experiment": "既存の因果発見手法に比べ、より手軽に高い精度の結果",
+        "contribution": "多次元データに対してより効率的に因果発見が可能になる",
+        "overview": "従属的因果発見手法NNRGLの提案"
+      },
+      "3": {
+        "title": "ネットワークフロー上の攻撃を不均衡データとして扱う手法の提案",
+        "issue": "サイバー攻撃は滅多に起こるものではなく、AIを学習させようにも不均衡データとなり性能が低下する",
+        "method": "サイバー攻撃を不均衡データとして扱うことにより精度の向上を図る",
+        "experiment": "実験中です",
+        "contribution": "実験中です",
+        "overview": "詳細な内容はまだありません。"
+      }
+    }
+  },
+  "Works": {
+    "title": "WORKS",
+    "openGithub": "Open GitHub repository",
+    "openSite": "Open project site",
+    "items": {
+      "Portfolio-Website": {
+        "title": "Malin's Portfolio",
+        "description": "いまご覧いただいているPortfolioサイトです。\nVercel上にデプロイしており、Next.js + Tailwind CSSで構築しました。\nGithub Actionsを用いてCI/CDも実現しています。"
+      },
+      "Tic-Tac-Toe-AI": {
+        "title": "Tic Tac Toe AI",
+        "description": "三目並べを強化学習で学習するAIエージェントをPythonで実装しました。Q学習を用いて自己対戦により最適な戦略を獲得します。初めて作成した強化学習モデルです。"
+      },
+      "recognize-handwritten-digits": {
+        "title": "英字手書き文字認識",
+        "description": "手書き英字文字を認識するモデルを作成しました。ニューラルネットワークを用いて高精度な認識を実現しています。EMNISTデータセットを使用して学習・評価を行いました。"
+      }
+    }
+  },
+  "Experience": {
+    "title": "EXPERIENCE",
+    "items": {
+      "exp-001": {
+        "period": "2025.07 - 現在",
+        "title": "バックエンドエンジニア",
+        "company": "任天堂株式会社",
+        "description": "Spring Bootを用いた社内向け管理ツールの開発・保守を担当。API設計、データベース設計、パフォーマンス最適化に従事。\nDockerを活用した開発環境の構築・運用や、AWSの各種サービス利用も経験。"
+      },
+      "exp-002": {
+        "period": "2023.10 - 現在",
+        "title": "MLエンジニア・研究補助",
+        "company": "University Lab",
+        "description": "HAR（人間活動認識）の欠測補完モデルを研究開発。オートエンコーダ/CGAN を用いた実験設計・評価・可視化を担当。\nNNを用いた因果発見手法のPyTorch実装・評価を担当。\nPythonを用いたデータ前処理、モデル実装、論文執筆に従事。"
+      },
+      "exp-003": {
+        "period": "2025.09",
+        "title": "短期Web開発インターン",
+        "company": "メディアリンク株式会社",
+        "description": "Spring BootとReactを用いた音声要約Webアプリケーションの開発インターン。\nバックエンドAPIの設計・実装、フロントエンドとの連携を担当。"
+      },
+      "exp-004": {
+        "period": "2025.09",
+        "title": "サービス創出ハッカソン型インターン",
+        "company": "Visionalグループ",
+        "description": "チームでアイデア出しからプロトタイプ作成までを行うハッカソン型インターン。"
+      }
+    }
+  },
+  "Skills": {
+    "title": "SKILL",
+    "level": "Level",
+    "experience": "Experience",
+    "description": "Description",
+    "moreInfo": "詳しくはこちらをご覧ください",
+    "items": {
+      "python": "主に研究で使用。PytorchやNumpy、matplotlib、pandasなどのライブラリを用いてデータ分析や機械学習を行っています。",
+      "java": "大学で2年間学びました。アルバイトでSpring Bootを使用したバックエンド開発を行っています。",
+      "html": "セマンティックHTMLを意識したマークアップが可能。",
+      "css": "Tailwind CSSを用いたスタイリングが可能。レスポンシブデザインやアニメーションの実装経験があります。",
+      "javascript": "DOM操作や基本的なES6+の文法を理解しており、フロントエンド開発が可能です。",
+      "typescript": "型安全なコードを書くことができ、Next.jsと組み合わせたフロントエンド開発が可能です。",
+      "react": "Next.js、TypeScriptと組み合わせたフロントエンド開発ができます。",
+      "nextjs": "SSRやSSGを活用したパフォーマンスの高いWebアプリケーション開発が可能です。",
+      "tailwind": "ユーティリティファーストのCSSフレームワークを用いた効率的なスタイリングが可能です。",
+      "aws": "EC2、S3、Lambda等を使用したインフラ構築。Aurora DB, Redshiftを用いたデータ分析基盤の構築経験があります。",
+      "mysql": "標準レベルでのSQLクエリの作成、データベース設計が可能です。",
+      "github": "チーム開発でのバージョン管理、GitHub Actionsを使用したCI/CDの経験があります。チーム開発で必要な知識は一通り理解しています。",
+      "vscode": "プログラミングを始めたときからずっと使っています。豊富な拡張機能を活用して効率的にコーディングしています。最近はCursorに浮気しています。",
+      "docker": "開発環境のコンテナ化のために主に使用しています。Docker Composeを用いたマルチコンテナ環境の利用経験もあります。",
+      "blender": "モデリングやアニメーションの作成が可能です。Boothにて3Dモデルを販売しています。"
+    }
+  },
+  "Qualifications": {
+    "title": "QUALIFICATION",
+    "items": {
+      "AP": "応用情報技術者試験",
+      "TOEIC": "TOEIC 715点",
+      "DL-G": "ディープラーニングG検定",
+      "FE": "基本情報技術者試験"
+    }
+  },
+  "Future": {
+    "title": "FUTURE",
+    "vision": "信頼されるAIを、社会の裏側に届ける",
+    "goals": {
+      "1": {
+        "title": "Explainability",
+        "description": "精度が高いだけでは、安心して使われるAIにはならない。なぜその判断に至ったのか、どこまで信じていいのか。AIの振る舞いを説明できることを大切にしています。"
+      },
+      "2": {
+        "title": "Robust Architecture",
+        "description": "表に出ないシステムほど、止まってはいけない。一時的な精度や流行ではなく、長く動き続けることを前提にした設計を大切にします。"
+      },
+      "3": {
+        "title": "Full Stack Perspective",
+        "description": "モデルを作ることが、ゴールではない。そのAIが、どこで使われ、誰に届き、どう運用されるのか。バックエンドやインフラまで視野に入れ、社会で機能するAIを目指します。"
+      }
+    }
+  },
+  "Contact": {
+    "title": "CONTACT",
+    "intro1": "最後までご覧いただきありがとうございました。このサイトを通して、私のことを少しでも知っていただけたのなら嬉しいです。",
+    "intro2": "もしこのサイトや私について何かコメントがありましたら、下記フォームをご利用ください。",
+    "nameLabel": "Name",
+    "emailLabel": "Email",
+    "messageLabel": "Comment",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "you@example.com",
+    "messagePlaceholder": "メッセージを入力してください",
+    "send": "SEND",
+    "sending": "SENDING...",
+    "success": "送信しました。ありがとうございます！",
+    "failure": "送信に失敗しました"
+  },
+  "Meta": {
+    "title": "Malin's Portfolio",
+    "description": "A portfolio website showcasing the projects and skills of Malin."
+  },
+  "Common": {
+    "copyright": "© {year} {name} All Rights Reserved.",
+    "top": "TOP",
+    "backToTop": "Back to top"
+  }
+}

@@ -2,19 +2,25 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, ArrowUpRight } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { researchData } from "@/data/research";
 import { cn } from "@/lib/utils";
+import type { ResearchId } from "@/types";
+
+const HIGHLIGHT_KEYS = ["issue", "method", "experiment", "contribution"] as const;
+
 export const Research = () => {
+  const t = useTranslations("Research");
   // どのアイテムが開いているかを管理（初期値は最初のID）
-  const [openId, setOpenId] = useState<string | null>(researchData[0].id);
-  const toggleOpen = (id: string) => {
+  const [openId, setOpenId] = useState<ResearchId | null>(researchData[0].id);
+  const toggleOpen = (id: ResearchId) => {
     setOpenId(openId === id ? null : id);
   };
   return (
     <section id="research" className="py-24 bg-sky-50"> 
       <div className="container mx-auto px-6 max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold tracking-wider mb-2">RESEARCH</h2>
+          <h2 className="text-3xl font-bold tracking-wider mb-2">{t("title")}</h2>
           <div className="w-12 h-1 bg-turquoise mx-auto"></div>
         </div>
         <div className="space-y-4">
@@ -30,7 +36,7 @@ export const Research = () => {
                   onClick={() => toggleOpen(item.id)}
                   className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
                 >
-                  <h3 className="text-lg font-bold">{item.title}</h3>
+                  <h3 className="text-lg font-bold">{t(`items.${item.id}.title`)}</h3>
                   <ChevronDown
                     className={cn(
                       "text-gray-400 transition-transform duration-300",
@@ -50,22 +56,20 @@ export const Research = () => {
                     >
                       <div className="p-6 pt-0 border-t border-gray-100">
                         {/* 4つの見出し */}
-                        {item.highlights.length > 0 && (
-                          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 mt-6">
-                            {item.highlights.map((h, i) => (
-                              <div key={i}>
-                                <h4 className="font-bold text-sm mb-1">{h.title}</h4>
-                                <p className="text-gray-600 text-sm leading-relaxed">
-                                  {h.description}
-                                </p>
-                              </div>
-                            ))}
-                          </div>
-                        )}
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 mt-6">
+                          {HIGHLIGHT_KEYS.map((key) => (
+                            <div key={key}>
+                              <h4 className="font-bold text-sm mb-1">{t(`labels.${key}`)}</h4>
+                              <p className="text-gray-600 text-sm leading-relaxed">
+                                {t(`items.${item.id}.${key}`)}
+                              </p>
+                            </div>
+                          ))}
+                        </div>
                         {/* Overviewボックス */}
                         <div className="bg-gray-200/50 rounded-xl p-8 min-h-[200px] flex items-center justify-center mb-6">
                           <p className="font-medium text-gray-700">
-                             {item.overview || "Overview"}
+                             {t(`items.${item.id}.overview`) || t("overviewFallback")}
                           </p>
                         </div>
                         {/* リンク */}
@@ -77,7 +81,7 @@ export const Research = () => {
                               rel="noopener noreferrer"
                               className="inline-flex items-center text-turquoise hover:text-teal font-medium transition-colors text-sm"
                             >
-                              論文詳細・スライドを見る
+                              {t("linkLabel")}
                               <ArrowUpRight className="ml-1 w-4 h-4" />
                             </a>
                           </div>

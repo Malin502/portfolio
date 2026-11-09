@@ -1,12 +1,14 @@
 "use client";
 import React from "react";
 import { worksData } from "@/data/works";
-import { useRouter } from "next/navigation";
+import { useTranslations } from "next-intl";
+import { useRouter } from "@/i18n/navigation";
 import { Github, ExternalLink } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 
 export const Works = () => {
+  const t = useTranslations("Works");
   const router = useRouter();
 
   const handleCardClick = (link?: string) => {
@@ -31,7 +33,7 @@ export const Works = () => {
       <div className="container mx-auto px-4 max-w-10xl">
         {/* セクションタイトル */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-darkgray tracking-wider mb-2">WORKS</h2>
+          <h2 className="text-3xl font-bold text-darkgray tracking-wider mb-2">{t("title")}</h2>
           <div className="w-16 h-1 bg-turquoise mx-auto rounded-full"></div>
         </div>
 
@@ -58,7 +60,7 @@ export const Works = () => {
                 {work.imagePath && (
                   <Image
                     src={work.imagePath}
-                    alt={work.title}
+                    alt={t(`items.${work.id}.title`)}
                     fill
                     className="object-cover"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
@@ -75,7 +77,7 @@ export const Works = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        aria-label="Open GitHub repository"
+                        aria-label={t("openGithub")}
                         className="w-10 h-10 rounded-full bg-white/90 text-black ring-1 ring-gray-300 shadow-sm flex items-center justify-center hover:text-turquoise hover:bg-white transition-colors"
                       >
                         <Github className="w-5 h-5" />
@@ -87,7 +89,7 @@ export const Works = () => {
                         target={/^https?:\/\//.test(work.link) ? "_blank" : undefined}
                         rel={/^https?:\/\//.test(work.link) ? "noopener noreferrer" : undefined}
                         onClick={(e) => e.stopPropagation()}
-                        aria-label="Open project site"
+                        aria-label={t("openSite")}
                         className="w-10 h-10 rounded-full bg-white/90 text-black ring-1 ring-gray-300 shadow-sm flex items-center justify-center hover:text-turquoise hover:bg-white transition-colors"
                       >
                         <ExternalLink className="w-5 h-5" />
@@ -99,9 +101,9 @@ export const Works = () => {
 
               {/* 本文 */}
               <div className="p-6 flex-grow flex flex-col">
-                <h3 className="text-darkgray text-xl font-bold mb-2 transition-colors group-hover:text-turquoise">{work.title}</h3>
+                <h3 className="text-darkgray text-xl font-bold mb-2 transition-colors group-hover:text-turquoise">{t(`items.${work.id}.title`)}</h3>
                 <p className="text-gray-600 text-sm leading-relaxed whitespace-pre-wrap mb-3">
-                  {work.description}
+                  {t(`items.${work.id}.description`)}
                 </p>
                 {/* タグ */}
                 <div className="mt-auto flex items-center justify-between">
