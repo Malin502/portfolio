@@ -9,9 +9,10 @@ import { LocaleSwitcher } from "./LocaleSwitcher";
 const NAV_ITEMS = [
     { key: "profile", href: "#profile" },
     { key: "research", href: "#research" },
-    { key: "skill", href: "#skill" },
+    { key: "publications", href: "#publications" },
     { key: "works", href: "#works" },
     { key: "experience", href: "#experience" },
+    { key: "skill", href: "#skill" },
     { key: "future", href: "#future" },
     { key: "contact", href: "#contact" }
 ] as const;
@@ -52,7 +53,7 @@ export const Header = () => {
                     {t("title", { name: PROFILE.nameEn })}
                 </button>
                 {/* ナビゲーション */}
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden md:flex items-center gap-6 lg:gap-8">
                     {NAV_ITEMS.map((item) => (
                         <a
                             key={item.key}

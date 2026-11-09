@@ -6,6 +6,7 @@ import { Header } from "@/app/components/layout/Header";
 import { Hero } from "@/app/components/sections/Heros";
 import { Profile } from "@/app/components/sections/Profile";
 import { Research } from "@/app/components/sections/Research";
+import { Publications } from "@/app/components/sections/Publications";
 import { Skill } from "@/app/components/sections/Skill";
 import { Qualification } from "@/app/components/sections/Qualification";
 import { Works } from "@/app/components/sections/Works";
@@ -32,10 +33,11 @@ export default async function Home({
         <Hero />
         <Profile />
         <Research />
-        <Skill />
-        <Qualification />
+        <Publications />
         <Works />
         <Experience />
+        <Skill />
+        <Qualification />
         <Future />
         <Contact />
       </main>

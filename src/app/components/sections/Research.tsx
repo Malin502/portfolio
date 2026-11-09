@@ -7,8 +7,6 @@ import { researchData } from "@/data/research";
 import { cn } from "@/lib/utils";
 import type { ResearchId } from "@/types";
 
-const HIGHLIGHT_KEYS = ["issue", "method", "experiment", "contribution"] as const;
-
 export const Research = () => {
   const t = useTranslations("Research");
   // どのアイテムが開いているかを管理（初期値は最初のID）
@@ -36,7 +34,12 @@ export const Research = () => {
                   onClick={() => toggleOpen(item.id)}
                   className="w-full flex items-center justify-between p-6 text-left hover:bg-gray-50 transition-colors"
                 >
-                  <h3 className="text-lg font-bold">{t(`items.${item.id}.title`)}</h3>
+                  <div className="flex flex-col md:flex-row md:items-center md:gap-4 min-w-0">
+                    <h3 className="text-lg font-bold">{t(`items.${item.id}.title`)}</h3>
+                    <span className="mt-1 md:mt-0 w-fit text-xs px-2.5 py-1 rounded-full bg-gray-100 text-gray-700 border border-gray-200 font-semibold shrink-0">
+                      {t(`items.${item.id}.status`)}
+                    </span>
+                  </div>
                   <ChevronDown
                     className={cn(
                       "text-gray-400 transition-transform duration-300",
@@ -55,30 +58,14 @@ export const Research = () => {
                       className="overflow-hidden"
                     >
                       <div className="p-6 pt-0 border-t border-gray-100">
-                        {/* 4つの見出し */}
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 mt-6">
-                          {HIGHLIGHT_KEYS.map((key) => (
-                            <div key={key}>
-                              <h4 className="font-bold text-sm mb-1">{t(`labels.${key}`)}</h4>
-                              <p className="text-gray-600 text-sm leading-relaxed">
-                                {t(`items.${item.id}.${key}`)}
-                              </p>
-                            </div>
-                          ))}
-                        </div>
-                        {/* Overviewボックス */}
-                        <div className="bg-gray-200/50 rounded-xl p-8 min-h-[200px] flex items-center justify-center mb-6">
-                          <p className="font-medium text-gray-700">
-                             {t(`items.${item.id}.overview`) || t("overviewFallback")}
-                          </p>
-                        </div>
+                        <p className="text-gray-600 leading-relaxed mt-6 mb-6">
+                          {t(`items.${item.id}.description`)}
+                        </p>
                         {/* リンク */}
-                        {item.link && (
+                        {item.href && (
                           <div className="text-center">
                             <a
-                              href={item.link}
-                              target="_blank"
-                              rel="noopener noreferrer"
+                              href={item.href}
                               className="inline-flex items-center text-turquoise hover:text-teal font-medium transition-colors text-sm"
                             >
                               {t("linkLabel")}

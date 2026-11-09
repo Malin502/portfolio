@@ -76,6 +76,11 @@ export const Future = () => {
             </motion.div>
           ))}
         </div>
+
+        {/* 締めの一文 */}
+        <p className="mt-12 text-center text-base md:text-lg font-medium text-darkgray leading-relaxed max-w-3xl mx-auto">
+          {t("closing")}
+        </p>
       </div>
     </section>
   );
