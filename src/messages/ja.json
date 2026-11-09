@@ -1,7 +1,9 @@
 {
   "Header": {
     "title": "{name}'s Portfolio",
-    "scrollTop": "Scroll to top",
+    "scrollTop": "トップへスクロール",
+    "menuOpen": "メニューを開く",
+    "menuClose": "メニューを閉じる",
     "nav": {
       "profile": "PROFILE",
       "research": "RESEARCH",
@@ -20,7 +22,7 @@
   },
   "Hero": {
     "role": "ネットワーク侵入検知の研究 × MLプラットフォームエンジニアリング",
-    "comment": "同志社大学で情報システム／コンピュータサイエンスを学ぶ4年生。異常検知の研究と、自律エージェント基盤の自作・運用をしています。",
+    "comment": "同志社大学 情報システムデザイン学科の4年生。異常検知の研究と、自律エージェント基盤の自作・運用をしています。",
     "viewWorks": "作品を見る",
     "viewSkills": "スキルセット",
     "github": "GitHub",
@@ -46,7 +48,7 @@
     "items": {
       "1": {
         "title": "NIDS サーベイ（共著）",
-        "status": "In preparation",
+        "status": "準備中",
         "description": "データ前処理・データ分割・特徴抽出に焦点を当てたネットワーク侵入検知のサーベイ。研究ごとに評価条件がどう異なるかの実証的な検証も行っています。"
       },
       "2": {
@@ -149,7 +151,7 @@
       "AP": "応用情報技術者試験",
       "DL-G": "ディープラーニングG検定",
       "FE": "基本情報技術者試験",
-      "TOEIC": "TOEIC 720点"
+      "TOEIC": "TOEIC 715点"
     }
   },
   "Future": {

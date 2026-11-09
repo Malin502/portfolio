@@ -2,6 +2,8 @@
   "Header": {
     "title": "{name}'s Portfolio",
     "scrollTop": "Scroll to top",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
     "nav": {
       "profile": "PROFILE",
       "research": "RESEARCH",
@@ -20,7 +22,7 @@
   },
   "Hero": {
     "role": "Network Intrusion Detection Research × ML Platform Engineering",
-    "comment": "Fourth-year undergraduate in information systems and computer science at Doshisha University. I research anomaly detection and build and operate my own autonomous-agent infrastructure.",
+    "comment": "Fourth-year undergraduate in the Department of Information Systems Design at Doshisha University. I research anomaly detection and build and operate my own autonomous-agent infrastructure.",
     "viewWorks": "View Works",
     "viewSkills": "Skill Set",
     "github": "GitHub",
@@ -149,7 +151,7 @@
       "AP": "Applied Information Technology Engineer Examination",
       "DL-G": "JDLA Deep Learning for GENERAL",
       "FE": "Fundamental Information Technology Engineer Examination",
-      "TOEIC": "TOEIC 720"
+      "TOEIC": "TOEIC 715"
     }
   },
   "Future": {

@@ -23,7 +23,7 @@ export const qualificationsData: Qualification[] = [
     date: "2025/05",
     icon: Award,
   },
-  // TOEIC 720点：取得時期は未確定のため表示しない
+  // TOEIC 715点：取得時期は未確定のため表示しない
   {
     id: "TOEIC",
     icon: Award,
