@@ -1,15 +1,10 @@
 // 文面は src/messages/*.json に移動。ここには言語に依存しない構造データのみを残す。
 
-export type SkillCategory = 'Language' | 'Framework' | 'Cloud' | 'Tool' | 'Other';
-
-// messages のキーに使う ID（リテラルにして t() のキーを型チェックする）
-export type SkillId =
-  | 'python' | 'java' | 'html' | 'css' | 'javascript' | 'typescript'
-  | 'react' | 'nextjs' | 'tailwind' | 'aws' | 'mysql' | 'github'
-  | 'vscode' | 'docker' | 'blender';
+export type SkillGroupId = 'languages' | 'ml' | 'infra' | 'web' | 'research';
 export type QualificationId = 'AP' | 'TOEIC' | 'DL-G' | 'FE';
 export type ExperienceId = 'exp-001' | 'exp-002' | 'exp-003' | 'exp-004';
-export type WorkId = 'Portfolio-Website' | 'Tic-Tac-Toe-AI' | 'recognize-handwritten-digits';
+export type WorkId = 'NEXUS' | 'Homelab' | 'Portfolio-Website';
+export type OtherWorkId = 'Tic-Tac-Toe-AI' | 'recognize-handwritten-digits';
 export type ResearchId = '1' | '2' | '3';
 export type FutureId = '1' | '2' | '3';
 
@@ -31,20 +26,20 @@ export interface Profile {
   skills: string[];
 };
 
-//スキル
-export interface Skill {
-  id: SkillId;
+//スキル（領域別。説明文は messages の Skills.groups.<id>）
+export interface SkillItem {
   name: string;
-  tag: SkillCategory;
-  icon: React.ElementType;
-  level: number; // 1から5
-  experience: string; // 経験期間
+  icon?: React.ElementType;
+}
+export interface SkillGroup {
+  id: SkillGroupId;
+  items: SkillItem[];
 }
 
 //資格
 export interface Qualification {
   id: QualificationId;
-  date: string;
+  date?: string; // 時期が未確定の資格は省略
   icon?: React.ElementType;
 }
 
@@ -56,7 +51,7 @@ export interface Experience {
 
 //制作実績
 export interface Work {
-  id: WorkId;
+  id: WorkId | OtherWorkId;
   imagePath?: string;
   tags: string[];
   link?: string;
@@ -66,8 +61,7 @@ export interface Work {
 //研究
 export interface Research {
   id: ResearchId;
-  imageUrl?: string;
-  link?: string;
+  href?: string; // 関連セクションへのアンカー
 }
 
 //Future

@@ -4,5 +4,5 @@ import { Profile } from "@/types";
 export const PROFILE: Profile = {
     nameEn: "Malin",
     nameJp: "まりん",
-    skills: ["Python", "React", "AWS", "AI/ML"],
+    skills: ["Python", "PyTorch", "Kubernetes", "Next.js"],
 };

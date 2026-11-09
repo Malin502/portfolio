@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail } from "lucide-react";
+import { Mail, Github } from "lucide-react";
 import { useTranslations } from "next-intl";
 
 export const Contact = () => {
@@ -22,14 +22,17 @@ export const Contact = () => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, message }),
       });
-      const data = await res.json();
-      if (!res.ok) throw new Error(data.error || t("failure"));
+      if (!res.ok) {
+        // サーバのエラー文は英語固定のため、ステータスからロケール別の文言を選ぶ
+        setStatus(res.status === 400 ? t("invalid") : t("failure"));
+        return;
+      }
       setStatus(t("success"));
       setName("");
       setEmail("");
       setMessage("");
-    } catch (err: any) {
-      setStatus(err.message ?? t("failure"));
+    } catch {
+      setStatus(t("failure"));
     } finally {
       setLoading(false);
     }
@@ -48,6 +51,15 @@ export const Contact = () => {
           <p className="text-gray-500 leading-relaxed">
             {t("intro2")}
           </p>
+          <a
+            href="https://github.com/Malin502"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 inline-flex items-center gap-2 text-turquoise hover:text-teal font-medium transition-colors"
+          >
+            <Github size={18} />
+            {t("github")}
+          </a>
         </div>
 
         {/* Form block like the second image */}

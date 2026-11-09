@@ -9,9 +9,10 @@ import { LocaleSwitcher } from "./LocaleSwitcher";
 const NAV_ITEMS = [
     { key: "profile", href: "#profile" },
     { key: "research", href: "#research" },
-    { key: "skill", href: "#skill" },
+    { key: "publications", href: "#publications" },
     { key: "works", href: "#works" },
     { key: "experience", href: "#experience" },
+    { key: "skill", href: "#skill" },
     { key: "future", href: "#future" },
     { key: "contact", href: "#contact" }
 ] as const;
@@ -19,6 +20,7 @@ const NAV_ITEMS = [
 export const Header = () => {
     const t = useTranslations("Header");
     const [isScrolled, setIsScrolled] = useState(false);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -52,12 +54,12 @@ export const Header = () => {
                     {t("title", { name: PROFILE.nameEn })}
                 </button>
                 {/* ナビゲーション */}
-                <nav className="hidden md:flex items-center gap-8">
+                <nav className="hidden lg:flex items-center gap-4 xl:gap-6 whitespace-nowrap">
                     {NAV_ITEMS.map((item) => (
                         <a
                             key={item.key}
                             href={item.href}
-                            className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
+                            className="text-xs xl:text-sm font-medium text-muted-foreground hover:text-primary transition-colors relative group"
                         >
                             {t(`nav.${item.key}`)}
                             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-turquoise transition-all group-hover:w-full" />
@@ -66,7 +68,41 @@ export const Header = () => {
                     {/* 言語切り替え */}
                     <LocaleSwitcher />
                 </nav>
+                {/* lg 未満: ハンバーガー */}
+                <div className="flex lg:hidden items-center gap-3">
+                    <LocaleSwitcher />
+                    <button
+                        type="button"
+                        onClick={() => setMenuOpen((v) => !v)}
+                        aria-expanded={menuOpen}
+                        aria-controls="mobile-nav"
+                        aria-label={menuOpen ? t("menuClose") : t("menuOpen")}
+                        className="p-2 text-xl leading-none"
+                    >
+                        {menuOpen ? "✕" : "☰"}
+                    </button>
+                </div>
             </div>
+            {menuOpen && (
+                <nav
+                    id="mobile-nav"
+                    className="lg:hidden mt-2 bg-background/95 backdrop-blur-md shadow-sm"
+                >
+                    <ul className="container mx-auto px-6 py-3 grid grid-cols-2 gap-x-6">
+                        {NAV_ITEMS.map((item) => (
+                            <li key={item.key}>
+                                <a
+                                    href={item.href}
+                                    onClick={() => setMenuOpen(false)}
+                                    className="block py-2 text-sm font-medium text-muted-foreground hover:text-primary transition-colors"
+                                >
+                                    {t(`nav.${item.key}`)}
+                                </a>
+                            </li>
+                        ))}
+                    </ul>
+                </nav>
+            )}
         </header>
     );
 };

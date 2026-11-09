@@ -5,7 +5,7 @@ import { getTranslations } from "next-intl/server";
 
 import { PROFILE } from "@/data/profile";
 
-const HISTORY_KEYS = ["1", "2", "3", "4"] as const;
+const HISTORY_KEYS = ["1", "2", "3", "4", "5"] as const;
 
 export const Profile = async () => {
   const t = await getTranslations("Profile");

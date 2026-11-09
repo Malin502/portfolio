@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { worksData } from "@/data/works";
+import { worksData, otherWorksData } from "@/data/works";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
 import { Github, ExternalLink } from "lucide-react";
@@ -121,6 +121,33 @@ export const Works = () => {
               </div>
             </motion.div>
           );})}
+        </div>
+
+        {/* Other projects */}
+        <div className="mt-16 max-w-4xl mx-auto">
+          <h3 className="text-sm font-bold uppercase tracking-wider text-gray-500 mb-4">{t("otherTitle")}</h3>
+          <ul className="grid gap-3 md:grid-cols-2">
+            {otherWorksData.map((work) => (
+              <li key={work.id} className="bg-background rounded-xl border border-gray-100 px-4 py-3 flex items-start justify-between gap-3">
+                <div className="min-w-0">
+                  <p className="text-sm font-bold text-darkgray">{t(`items.${work.id}.title`)}</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">{t(`items.${work.id}.description`)}</p>
+                  <p className="mt-1 text-xs text-gray-400">{work.tags.join(" / ")}</p>
+                </div>
+                {work.githubUrl && (
+                  <a
+                    href={work.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t("openGithub")}
+                    className="shrink-0 text-gray-500 hover:text-turquoise transition-colors"
+                  >
+                    <Github className="w-5 h-5" />
+                  </a>
+                )}
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
     </section>

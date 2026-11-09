@@ -1,13 +1,16 @@
 {
   "Header": {
     "title": "{name}'s Portfolio",
-    "scrollTop": "Scroll to top",
+    "scrollTop": "トップへスクロール",
+    "menuOpen": "メニューを開く",
+    "menuClose": "メニューを閉じる",
     "nav": {
       "profile": "PROFILE",
       "research": "RESEARCH",
-      "skill": "SKILL",
+      "publications": "PUBLICATIONS",
       "works": "WORKS",
       "experience": "EXPERIENCE",
+      "skill": "SKILL",
       "future": "FUTURE",
       "contact": "CONTACT"
     },
@@ -18,11 +21,11 @@
     }
   },
   "Hero": {
-    "role": "AI / Security / Network",
-    "comment": "Stay Hungry, Stay Foolish. \n常に新しい技術に挑戦し続けます。",
+    "role": "ネットワーク侵入検知の研究 × MLプラットフォームエンジニアリング",
+    "comment": "同志社大学 情報システムデザイン学科の4年生。異常検知の研究と、自律エージェント基盤の自作・運用をしています。",
     "viewWorks": "作品を見る",
     "viewSkills": "スキルセット",
-    "github": "Github",
+    "github": "GitHub",
     "imageAlt": "Hero"
   },
   "Profile": {
@@ -30,48 +33,33 @@
     "introduction": "Introduction",
     "history": "History",
     "imageAlt": "Hero",
-    "description": "中学生のころにプログラミングに学び始め、今はAI、セキュリティ、ネットワークに興味があり研究を行っています。\n特に異常検知やデータ分析が得意分野だと自称しています。\nAIだけでなくWeb開発やクラウドインフラにも挑戦中。",
+    "description": "2023年4月に入学し、現在4年生です。修士進学予定（29卒）。\n志向は ML Platform / DevSecOps / SRE。MLを長く・安全に・再現可能に動かす仕組みづくりに関心があります。\n研究では異常検知（ネットワーク侵入検知）を扱い、自宅では自律エージェント基盤やホームラボを自作・運用しています。",
     "historyItems": {
       "1": "情報システムデザイン学科に在籍中（2023年4月入学）",
-      "2": "個人でAI関連のプロジェクトを複数開発",
-      "3": "開発系アルバイト経験あり（Java, Spring Boot）",
-      "4": "共著者として国際会議に論文採択経験あり"
+      "2": "修士進学予定（29卒）",
+      "3": "志向：ML Platform / DevSecOps / SRE",
+      "4": "開発系アルバイト経験あり（Java, Spring Boot）",
+      "5": "共著者として国際会議に論文採択経験あり"
     }
   },
   "Research": {
     "title": "RESEARCH",
-    "overviewFallback": "Overview",
-    "linkLabel": "論文詳細・スライドを見る",
-    "labels": {
-      "issue": "課題",
-      "method": "手法",
-      "experiment": "実験",
-      "contribution": "貢献"
-    },
+    "linkLabel": "Publications を見る",
     "items": {
       "1": {
-        "title": "HAR (Human Activity Recognition) の欠測補完技術の提案",
-        "issue": "既存モデルでは欠測がある場合に予測精度が低下する",
-        "method": "オートエンコーダとCGANを組み合わせた欠測補完手法",
-        "experiment": "欠測がある場合でも同程度の予測精度を達成",
-        "contribution": "これによりリアルタイムな欠測補完が可能",
-        "overview": "HAR (Human Activity Recognition) の欠測補完技術の提案"
+        "title": "NIDS サーベイ（共著）",
+        "status": "準備中",
+        "description": "データ前処理・データ分割・特徴抽出に焦点を当てたネットワーク侵入検知のサーベイ。研究ごとに評価条件がどう異なるかの実証的な検証も行っています。"
       },
       "2": {
-        "title": "従属的因果発見手法NNRGLの提案",
-        "issue": "既存の因果発見手法は多次元の解析が困難であり、かつ精度が低い傾向がある",
-        "method": "ニューラルネットワークとグループラッソを組み合わせた因果発見手法",
-        "experiment": "既存の因果発見手法に比べ、より手軽に高い精度の結果",
-        "contribution": "多次元データに対してより効率的に因果発見が可能になる",
-        "overview": "従属的因果発見手法NNRGLの提案"
+        "title": "卒業研究：NIDS手法の比較評価基盤",
+        "status": "進行中",
+        "description": "NIDS手法を公平に比較評価するための共通実験基盤を開発しています。入力形式・データ分割・評価指標・計算予算の仕様を共通化します。"
       },
       "3": {
-        "title": "ネットワークフロー上の攻撃を不均衡データとして扱う手法の提案",
-        "issue": "サイバー攻撃は滅多に起こるものではなく、AIを学習させようにも不均衡データとなり性能が低下する",
-        "method": "サイバー攻撃を不均衡データとして扱うことにより精度の向上を図る",
-        "experiment": "実験中です",
-        "contribution": "実験中です",
-        "overview": "詳細な内容はまだありません。"
+        "title": "HAR：CGANによる欠測モダリティ補完のクラス別分析",
+        "status": "国際会議にて採択（共著）",
+        "description": "人間活動認識（HAR）において、CGANで欠測モダリティを補完した際の振る舞いをクラス別に分析しました。"
       }
     }
   },
@@ -79,18 +67,27 @@
     "title": "WORKS",
     "openGithub": "Open GitHub repository",
     "openSite": "Open project site",
+    "otherTitle": "Other projects",
     "items": {
+      "NEXUS": {
+        "title": "NEXUS / Agent-core",
+        "description": "自宅の k3s 上で動かしている自律型マルチエージェント基盤。役割分担したエージェントが Discord を窓口に、秘書業務や開発支援を行います。"
+      },
+      "Homelab": {
+        "title": "ホームラボ基盤",
+        "description": "Proxmox 上の2ノード k3s クラスタ。Prometheus/Grafana による監視、GitOps による構成管理、Cloudflare Tunnel による公開を行っています。"
+      },
       "Portfolio-Website": {
-        "title": "Malin's Portfolio",
-        "description": "いまご覧いただいているPortfolioサイトです。\nVercel上にデプロイしており、Next.js + Tailwind CSSで構築しました。\nGithub Actionsを用いてCI/CDも実現しています。"
+        "title": "本ポートフォリオサイト",
+        "description": "いまご覧いただいているサイトです。Next.js・Tailwind CSS・next-intl で構築し、日英に対応しています。GitHub Actions 経由で Vercel にデプロイしています。"
       },
       "Tic-Tac-Toe-AI": {
         "title": "Tic Tac Toe AI",
-        "description": "三目並べを強化学習で学習するAIエージェントをPythonで実装しました。Q学習を用いて自己対戦により最適な戦略を獲得します。初めて作成した強化学習モデルです。"
+        "description": "Q学習による三目並べAI。"
       },
       "recognize-handwritten-digits": {
         "title": "英字手書き文字認識",
-        "description": "手書き英字文字を認識するモデルを作成しました。ニューラルネットワークを用いて高精度な認識を実現しています。EMNISTデータセットを使用して学習・評価を行いました。"
+        "description": "EMNISTを用いた手書き英字の認識モデル。"
       }
     }
   },
@@ -125,35 +122,36 @@
   },
   "Skills": {
     "title": "SKILL",
-    "level": "Level",
-    "experience": "Experience",
-    "description": "Description",
-    "moreInfo": "詳しくはこちらをご覧ください",
-    "items": {
-      "python": "主に研究で使用。PytorchやNumpy、matplotlib、pandasなどのライブラリを用いてデータ分析や機械学習を行っています。",
-      "java": "大学で2年間学びました。アルバイトでSpring Bootを使用したバックエンド開発を行っています。",
-      "html": "セマンティックHTMLを意識したマークアップが可能。",
-      "css": "Tailwind CSSを用いたスタイリングが可能。レスポンシブデザインやアニメーションの実装経験があります。",
-      "javascript": "DOM操作や基本的なES6+の文法を理解しており、フロントエンド開発が可能です。",
-      "typescript": "型安全なコードを書くことができ、Next.jsと組み合わせたフロントエンド開発が可能です。",
-      "react": "Next.js、TypeScriptと組み合わせたフロントエンド開発ができます。",
-      "nextjs": "SSRやSSGを活用したパフォーマンスの高いWebアプリケーション開発が可能です。",
-      "tailwind": "ユーティリティファーストのCSSフレームワークを用いた効率的なスタイリングが可能です。",
-      "aws": "EC2、S3、Lambda等を使用したインフラ構築。Aurora DB, Redshiftを用いたデータ分析基盤の構築経験があります。",
-      "mysql": "標準レベルでのSQLクエリの作成、データベース設計が可能です。",
-      "github": "チーム開発でのバージョン管理、GitHub Actionsを使用したCI/CDの経験があります。チーム開発で必要な知識は一通り理解しています。",
-      "vscode": "プログラミングを始めたときからずっと使っています。豊富な拡張機能を活用して効率的にコーディングしています。最近はCursorに浮気しています。",
-      "docker": "開発環境のコンテナ化のために主に使用しています。Docker Composeを用いたマルチコンテナ環境の利用経験もあります。",
-      "blender": "モデリングやアニメーションの作成が可能です。Boothにて3Dモデルを販売しています。"
+    "groups": {
+      "languages": {
+        "title": "Languages",
+        "description": "研究では Python、Webでは TypeScript/JavaScript、業務・アルバイトでは Java を使っています。"
+      },
+      "ml": {
+        "title": "ML / Data",
+        "description": "前処理とリーク防止、評価設計を意識した実験を行っています。"
+      },
+      "infra": {
+        "title": "Infrastructure",
+        "description": "自宅の k3s クラスタを自作・運用し、監視と CI/CD まで整えています。"
+      },
+      "web": {
+        "title": "Web",
+        "description": "フロントエンドからバックエンドまで一通り開発できます。"
+      },
+      "research": {
+        "title": "Research",
+        "description": "LaTeX での論文執筆、再現性の管理、英語論文の読み書きを行っています。"
+      }
     }
   },
   "Qualifications": {
     "title": "QUALIFICATION",
     "items": {
       "AP": "応用情報技術者試験",
-      "TOEIC": "TOEIC 715点",
       "DL-G": "ディープラーニングG検定",
-      "FE": "基本情報技術者試験"
+      "FE": "基本情報技術者試験",
+      "TOEIC": "TOEIC 715点"
     }
   },
   "Future": {
@@ -172,12 +170,13 @@
         "title": "Full Stack Perspective",
         "description": "モデルを作ることが、ゴールではない。そのAIが、どこで使われ、誰に届き、どう運用されるのか。バックエンドやインフラまで視野に入れ、社会で機能するAIを目指します。"
       }
-    }
+    },
+    "closing": "研究で作ったモデルが社会の中で長く動き続けるための土台を設計・運用できるエンジニアを目指しています"
   },
   "Contact": {
     "title": "CONTACT",
-    "intro1": "最後までご覧いただきありがとうございました。このサイトを通して、私のことを少しでも知っていただけたのなら嬉しいです。",
-    "intro2": "もしこのサイトや私について何かコメントがありましたら、下記フォームをご利用ください。",
+    "intro1": "最後までご覧いただきありがとうございます。",
+    "intro2": "ご意見・ご連絡は、下記フォームまたは GitHub からどうぞ。",
     "nameLabel": "Name",
     "emailLabel": "Email",
     "messageLabel": "Comment",
@@ -186,8 +185,10 @@
     "messagePlaceholder": "メッセージを入力してください",
     "send": "SEND",
     "sending": "SENDING...",
-    "success": "送信しました。ありがとうございます！",
-    "failure": "送信に失敗しました"
+    "failure": "送信に失敗しました",
+    "github": "GitHub",
+    "invalid": "すべての項目を入力してください",
+    "success": "送信しました。ありがとうございます！"
   },
   "Meta": {
     "title": "Malin's Portfolio",
@@ -197,5 +198,11 @@
     "copyright": "© {year} {name} All Rights Reserved.",
     "top": "TOP",
     "backToTop": "Back to top"
+  },
+  "Publications": {
+    "title": "PUBLICATIONS",
+    "paperTitle": "Class-Wise Behavior Analysis of CGAN in Missing Modality Imputation for Human Activity Recognition",
+    "status": "国際会議にて採択（共著）",
+    "relatedLink": "関連する研究を見る"
   }
 }

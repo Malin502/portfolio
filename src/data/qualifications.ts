@@ -14,11 +14,6 @@ export const qualificationsData: Qualification[] = [
     icon: Award,
   },
   {
-    id: "TOEIC",
-    date: "2025/08",
-    icon: Award,
-  },
-  {
     id: "DL-G",
     date: "2025/07",
     icon: Award,
@@ -26,6 +21,11 @@ export const qualificationsData: Qualification[] = [
   {
     id: "FE",
     date: "2025/05",
+    icon: Award,
+  },
+  // TOEIC 715点：取得時期は未確定のため表示しない
+  {
+    id: "TOEIC",
     icon: Award,
   },
 ];

@@ -2,12 +2,15 @@
   "Header": {
     "title": "{name}'s Portfolio",
     "scrollTop": "Scroll to top",
+    "menuOpen": "Open menu",
+    "menuClose": "Close menu",
     "nav": {
       "profile": "PROFILE",
       "research": "RESEARCH",
-      "skill": "SKILL",
+      "publications": "PUBLICATIONS",
       "works": "WORKS",
       "experience": "EXPERIENCE",
+      "skill": "SKILL",
       "future": "FUTURE",
       "contact": "CONTACT"
     },
@@ -18,11 +21,11 @@
     }
   },
   "Hero": {
-    "role": "AI / Security / Network",
-    "comment": "Stay Hungry, Stay Foolish. \nI keep taking on new technologies.",
+    "role": "Network Intrusion Detection Research × ML Platform Engineering",
+    "comment": "Fourth-year undergraduate in the Department of Information Systems Design at Doshisha University. I research anomaly detection and build and operate my own autonomous-agent infrastructure.",
     "viewWorks": "View Works",
     "viewSkills": "Skill Set",
-    "github": "Github",
+    "github": "GitHub",
     "imageAlt": "Hero"
   },
   "Profile": {
@@ -30,48 +33,33 @@
     "introduction": "Introduction",
     "history": "History",
     "imageAlt": "Hero",
-    "description": "I started learning programming in junior high school, and now I conduct research in AI, security, and networking.\nI call anomaly detection and data analysis my specialties.\nBeyond AI, I am also taking on web development and cloud infrastructure.",
+    "description": "I enrolled in April 2023 and am now a fourth-year student, planning to continue to a master's program (class of 2029).\nMy interests are ML Platform, DevSecOps, and SRE: building the systems that keep ML running for the long term, safely and reproducibly.\nMy research focuses on anomaly detection (network intrusion detection), and at home I build and operate my own autonomous-agent infrastructure and homelab.",
     "historyItems": {
       "1": "Currently enrolled in the Department of Information Systems Design (admitted April 2023)",
-      "2": "Developed several AI-related projects on my own",
-      "3": "Part-time development experience (Java, Spring Boot)",
-      "4": "Co-authored a paper accepted at an international conference"
+      "2": "Planning to enter a master's program (class of 2029)",
+      "3": "Focus: ML Platform / DevSecOps / SRE",
+      "4": "Part-time development experience (Java, Spring Boot)",
+      "5": "Co-authored a paper accepted at an international conference"
     }
   },
   "Research": {
     "title": "RESEARCH",
-    "overviewFallback": "Overview",
-    "linkLabel": "View paper details and slides",
-    "labels": {
-      "issue": "Problem",
-      "method": "Method",
-      "experiment": "Experiment",
-      "contribution": "Contribution"
-    },
+    "linkLabel": "See Publications",
     "items": {
       "1": {
-        "title": "Proposal of a Missing-Data Imputation Technique for HAR (Human Activity Recognition)",
-        "issue": "Prediction accuracy of existing models degrades when data is missing",
-        "method": "An imputation method combining an autoencoder and a CGAN",
-        "experiment": "Achieved comparable prediction accuracy even with missing data",
-        "contribution": "This enables real-time imputation of missing data",
-        "overview": "Proposal of a Missing-Data Imputation Technique for HAR (Human Activity Recognition)"
+        "title": "NIDS Survey (co-authored)",
+        "status": "In preparation",
+        "description": "Co-authoring a survey on network-based intrusion detection, focusing on data preprocessing, data partitioning, and feature extraction, with an empirical assessment of how evaluation conditions differ across studies."
       },
       "2": {
-        "title": "Proposal of NNRGL, a Dependent Causal Discovery Method",
-        "issue": "Existing causal discovery methods struggle with high-dimensional analysis and tend to have low accuracy",
-        "method": "A causal discovery method combining a neural network and group lasso",
-        "experiment": "Achieved highly accurate results more easily than existing causal discovery methods",
-        "contribution": "Enables more efficient causal discovery on high-dimensional data",
-        "overview": "Proposal of NNRGL, a Dependent Causal Discovery Method"
+        "title": "Graduation research: evaluation framework for NIDS",
+        "status": "In progress",
+        "description": "Developing a common experimental framework for comparative evaluation of network intrusion detection methods — shared specifications for input formatting, data partitioning, metrics, and compute budget."
       },
       "3": {
-        "title": "Proposal of a Method that Treats Attacks in Network Flows as Imbalanced Data",
-        "issue": "Cyber attacks rarely occur, so training an AI on them yields imbalanced data and degrades performance",
-        "method": "Aims to improve accuracy by treating cyber attacks as imbalanced data",
-        "experiment": "Experiments are in progress",
-        "contribution": "Experiments are in progress",
-        "overview": "No detailed content is available yet."
+        "title": "HAR: class-wise analysis of CGAN-based missing-modality imputation",
+        "status": "Accepted at an international conference (co-author)",
+        "description": "Analyzed how a CGAN behaves, class by class, when imputing missing modalities in human activity recognition (HAR)."
       }
     }
   },
@@ -79,18 +67,27 @@
     "title": "WORKS",
     "openGithub": "Open GitHub repository",
     "openSite": "Open project site",
+    "otherTitle": "Other projects",
     "items": {
+      "NEXUS": {
+        "title": "NEXUS / Agent-core",
+        "description": "An autonomous multi-agent platform running on my home k3s cluster. Role-specialized agents act as a secretary and development assistant, with Discord as the interface."
+      },
+      "Homelab": {
+        "title": "Homelab Infrastructure",
+        "description": "A two-node k3s cluster on Proxmox, with Prometheus/Grafana monitoring, GitOps-based configuration management, and Cloudflare Tunnel for exposure."
+      },
       "Portfolio-Website": {
-        "title": "Malin's Portfolio",
-        "description": "This is the portfolio site you are viewing right now.\nIt is deployed on Vercel and built with Next.js and Tailwind CSS.\nCI/CD is also implemented with GitHub Actions."
+        "title": "This Portfolio Site",
+        "description": "The site you are viewing. Built with Next.js, Tailwind CSS, and next-intl with Japanese/English support, and deployed to Vercel via GitHub Actions."
       },
       "Tic-Tac-Toe-AI": {
         "title": "Tic Tac Toe AI",
-        "description": "I implemented in Python an AI agent that learns tic-tac-toe through reinforcement learning. It acquires an optimal strategy through self-play using Q-learning. This is the first reinforcement learning model I built."
+        "description": "A Q-learning agent for tic-tac-toe."
       },
       "recognize-handwritten-digits": {
         "title": "Handwritten Letter Recognition",
-        "description": "I built a model that recognizes handwritten English letters. It achieves high-accuracy recognition using a neural network. Training and evaluation were done with the EMNIST dataset."
+        "description": "A handwritten-letter recognition model trained on EMNIST."
       }
     }
   },
@@ -125,35 +122,36 @@
   },
   "Skills": {
     "title": "SKILL",
-    "level": "Level",
-    "experience": "Experience",
-    "description": "Description",
-    "moreInfo": "See here for more details",
-    "items": {
-      "python": "Mainly used for research. I do data analysis and machine learning using libraries such as PyTorch, NumPy, matplotlib, and pandas.",
-      "java": "Studied for two years at university. I do backend development with Spring Boot in a part-time job.",
-      "html": "Able to write markup with semantic HTML in mind.",
-      "css": "Able to style with Tailwind CSS. I have experience implementing responsive design and animations.",
-      "javascript": "I understand DOM manipulation and basic ES6+ syntax, and can do frontend development.",
-      "typescript": "I can write type-safe code and do frontend development in combination with Next.js.",
-      "react": "I can do frontend development in combination with Next.js and TypeScript.",
-      "nextjs": "Able to develop high-performance web applications leveraging SSR and SSG.",
-      "tailwind": "Able to style efficiently using a utility-first CSS framework.",
-      "aws": "Infrastructure building with EC2, S3, Lambda, and more. I have experience building a data analytics platform with Aurora DB and Redshift.",
-      "mysql": "Able to write standard-level SQL queries and design databases.",
-      "github": "I have experience with version control in team development and CI/CD using GitHub Actions. I understand the knowledge needed for team development.",
-      "vscode": "I have used it since I first started programming. I code efficiently with its rich extensions. Recently I have been cheating on it with Cursor.",
-      "docker": "Mainly used to containerize development environments. I also have experience with multi-container environments using Docker Compose.",
-      "blender": "Able to create models and animations. I sell 3D models on Booth."
+    "groups": {
+      "languages": {
+        "title": "Languages",
+        "description": "Python for research, TypeScript/JavaScript for the web, and Java for work and internships."
+      },
+      "ml": {
+        "title": "ML / Data",
+        "description": "I run experiments with careful preprocessing, leakage prevention, and evaluation design."
+      },
+      "infra": {
+        "title": "Infrastructure",
+        "description": "I build and operate my own k3s cluster, including monitoring and CI/CD."
+      },
+      "web": {
+        "title": "Web",
+        "description": "I can develop across the stack, from frontend to backend."
+      },
+      "research": {
+        "title": "Research",
+        "description": "Paper writing in LaTeX, reproducibility management, and reading and writing English papers."
+      }
     }
   },
   "Qualifications": {
     "title": "QUALIFICATION",
     "items": {
       "AP": "Applied Information Technology Engineer Examination",
-      "TOEIC": "TOEIC 715",
-      "DL-G": "JDLA Deep Learning for GENERAL (G Certification)",
-      "FE": "Fundamental Information Technology Engineer Examination"
+      "DL-G": "JDLA Deep Learning for GENERAL",
+      "FE": "Fundamental Information Technology Engineer Examination",
+      "TOEIC": "TOEIC 715"
     }
   },
   "Future": {
@@ -172,12 +170,13 @@
         "title": "Full Stack Perspective",
         "description": "Building a model is not the goal. Where is that AI used, who does it reach, and how is it operated? Taking backend and infrastructure into view as well, I aim for AI that works in society."
       }
-    }
+    },
+    "closing": "I aim to become an engineer who can design and operate the foundations that keep models built in research running in society for the long term."
   },
   "Contact": {
     "title": "CONTACT",
-    "intro1": "Thank you for reading to the end. I would be glad if this site helped you get to know me, even a little.",
-    "intro2": "If you have any comments about this site or about me, please use the form below.",
+    "intro1": "Thank you for visiting.",
+    "intro2": "Feel free to reach out via the form below or on GitHub.",
     "nameLabel": "Name",
     "emailLabel": "Email",
     "messageLabel": "Comment",
@@ -186,8 +185,10 @@
     "messagePlaceholder": "Please enter your message",
     "send": "SEND",
     "sending": "SENDING...",
-    "success": "Sent. Thank you!",
-    "failure": "Failed to send"
+    "failure": "Failed to send",
+    "github": "GitHub",
+    "invalid": "Please fill in all fields",
+    "success": "Sent. Thank you!"
   },
   "Meta": {
     "title": "Malin's Portfolio",
@@ -197,5 +198,11 @@
     "copyright": "© {year} {name} All Rights Reserved.",
     "top": "TOP",
     "backToTop": "Back to top"
+  },
+  "Publications": {
+    "title": "PUBLICATIONS",
+    "paperTitle": "Class-Wise Behavior Analysis of CGAN in Missing Modality Imputation for Human Activity Recognition",
+    "status": "Accepted at an international conference (co-author)",
+    "relatedLink": "See related research"
   }
 }

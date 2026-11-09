@@ -39,9 +39,11 @@ export function Qualification() {
                                         <h3 className="text-base font-bold text-dark-gray mb-1">
                                             {t(`items.${qual.id}`)}
                                         </h3>
-                                        <div className="text-gray-500 font-medium text-sm">
-                                            {qual.date}
-                                        </div>
+                                        {qual.date && (
+                                            <div className="text-gray-500 font-medium text-sm">
+                                                {qual.date}
+                                            </div>
+                                        )}
                                     </div>
                                 </motion.div>
                             );
