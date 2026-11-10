@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Noto_Sans_JP } from "next/font/google";
 import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
@@ -30,11 +30,35 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) return {};
   const t = await getTranslations({ locale, namespace: "Meta" });
+  const title = t("title");
+  const description = t("description");
   return {
-    title: t("title"),
-    description: t("description"),
+    metadataBase: new URL("https://malin-portfolio.vercel.app"),
+    title,
+    description,
+    alternates: {
+      canonical: `/${locale}`,
+      languages: { ja: "/ja", en: "/en" },
+    },
+    openGraph: {
+      title,
+      description,
+      url: `/${locale}`,
+      siteName: title,
+      locale: locale === "ja" ? "ja_JP" : "en_US",
+      type: "website",
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
   };
 }
+
+export const viewport: Viewport = {
+  themeColor: "#0f172a",
+};
 
 export default async function RootLayout({
   children,
