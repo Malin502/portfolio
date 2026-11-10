@@ -38,7 +38,6 @@ export interface Skill {
   name: string;
   tag: SkillCategory;
   icon: React.ElementType;
-  level: number; // 1から5
   experience: string; // 経験期間
 }
 

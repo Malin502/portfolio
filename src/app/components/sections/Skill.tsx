@@ -1,7 +1,6 @@
 "use client";
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Star } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { skillsData } from "@/data/skills";
 
@@ -116,22 +115,6 @@ export const Skill = () => {
                                 </div>
                             </div>
 
-                            {/* レベル */}
-                            <div className="mb-6">
-                                <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">{t("level")}</p>
-                                <div className="flex gap-1">
-                                    {[1, 2, 3, 4, 5].map((star) => (
-                                        <Star
-                                            key={star}
-                                            className={`w-5 h-5 ${star <= selectedSkill.level
-                                                    ? "fill-yellow-400 text-yellow-400"
-                                                    : "fill-gray-200 text-gray-200"
-                                                }`}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-
                             {/* 経験期間 */}
                             <div className="mb-6">
                                 <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">{t("experience")}</p>
@@ -147,12 +130,6 @@ export const Skill = () => {
                             </div>
                         </motion.div>
                     </AnimatePresence>
-                </div>
-                {/* 詳しくはこちらをご覧ください */}
-                <div className="text-center mb-15">
-                    <a href="https://stackshare.io/takuto.ponta/mystack" className="text-turquoise hover:text-teal text-sm font-medium">
-                        {t("moreInfo")}
-                    </a>
                 </div>
             </div>
         </section>
