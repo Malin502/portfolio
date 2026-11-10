@@ -7,6 +7,15 @@ import {
   SiMysql,
   SiGithub,
   SiDocker,
+  SiKubernetes,
+  SiPytorch,
+  SiProxmox,
+  SiGrafana,
+  SiPrometheus,
+  SiArgo,
+  SiGithubactions,
+  SiLinux,
+  SiCloudflare,
 } from 'react-icons/si';
 
 import { FaJava, FaAws} from 'react-icons/fa';
@@ -15,6 +24,7 @@ import { RiNextjsFill } from 'react-icons/ri';
 // 説明文は messages の Skills 名前空間（items.<id>）
 export const skillsData: Skill[] = [
   { id: "python", name: "Python", tag: "Language", icon: SiPython, experience: "36 Months" },
+  { id: "pytorch", name: "PyTorch", tag: "Framework", icon: SiPytorch, experience: "12 Months" },
   { id: "java", name: "Java", tag: "Language", icon: FaJava, experience: "48 Months" },
   { id: "typescript", name: "TypeScript", tag: "Language", icon: SiTypescript, experience: "6 Months" },
   { id: "react", name: "React", tag: "Framework", icon: SiReact, experience: "10 Months" },
@@ -22,6 +32,14 @@ export const skillsData: Skill[] = [
   { id: "tailwind", name: "Tailwind CSS", tag: "Framework", icon: SiTailwindcss, experience: "3 Months" },
   { id: "aws", name: "AWS", tag: "Cloud", icon: FaAws, experience: "6 Months" },
   { id: "mysql", name: "MySQL", tag: "Tool", icon: SiMysql, experience: "6 Months" },
-  { id: "github", name: "Github", tag: "Tool", icon: SiGithub, experience: "40 Months" },
+  { id: "github", name: "GitHub", tag: "Tool", icon: SiGithub, experience: "40 Months" },
   { id: "docker", name: "Docker", tag: "Tool", icon: SiDocker, experience: "8 Months" },
+  { id: "kubernetes", name: "Kubernetes", tag: "Tool", icon: SiKubernetes, experience: "12 Months" },
+  { id: "proxmox", name: "Proxmox VE", tag: "Tool", icon: SiProxmox, experience: "6 Months" },
+  { id: "argocd", name: "Argo CD", tag: "Tool", icon: SiArgo, experience: "6 Months" },
+  { id: "githubactions", name: "GitHub Actions", tag: "Tool", icon: SiGithubactions, experience: "6 Months" },
+  { id: "grafana", name: "Grafana", tag: "Tool", icon: SiGrafana, experience: "3 Months" },
+  { id: "prometheus", name: "Prometheus", tag: "Tool", icon: SiPrometheus, experience: "3 Months" },
+  { id: "linux", name: "Linux", tag: "Tool", icon: SiLinux, experience: "18 Months" },
+  { id: "cloudflare", name: "Cloudflare", tag: "Cloud", icon: SiCloudflare, experience: "6 Months" },
 ];

@@ -141,7 +141,16 @@
       "github": "I have experience with version control in team development and CI/CD using GitHub Actions. I understand the knowledge needed for team development.",
       "vscode": "I have used it since I first started programming. I code efficiently with its rich extensions. Recently I have been cheating on it with Cursor.",
       "docker": "Mainly used to containerize development environments. I also have experience with multi-container environments using Docker Compose.",
-      "blender": "Able to create models and animations. I sell 3D models on Booth."
+      "blender": "Able to create models and animations. I sell 3D models on Booth.",
+      "pytorch": "Used in my research — implementing, training, and evaluating models for NIDS and HAR.",
+      "kubernetes": "Used on my home server — I run a k3s cluster that hosts my autonomous-agent platform.",
+      "proxmox": "The virtualization platform for my home lab — I run the k3s worker node and Home Assistant as VMs on it.",
+      "grafana": "Used to monitor my home cluster — visualizing Prometheus metrics on dashboards.",
+      "prometheus": "Collecting metrics from my home cluster with the kube-prometheus stack.",
+      "argocd": "Used for GitOps — deployments of my agent platform roll out automatically from GitHub merges.",
+      "githubactions": "Used for CI/CD — automating image builds for my agent platform and deployments of this site.",
+      "linux": "The foundation of my server operations — I run Ubuntu Server on everything from a Raspberry Pi to VMs.",
+      "cloudflare": "Used for domain registration, DNS, and Tunnels — including publishing routes to my home services."
     }
   },
   "Qualifications": {
