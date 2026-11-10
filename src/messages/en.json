@@ -141,7 +141,9 @@
       "github": "I have experience with version control in team development and CI/CD using GitHub Actions. I understand the knowledge needed for team development.",
       "vscode": "I have used it since I first started programming. I code efficiently with its rich extensions. Recently I have been cheating on it with Cursor.",
       "docker": "Mainly used to containerize development environments. I also have experience with multi-container environments using Docker Compose.",
-      "blender": "Able to create models and animations. I sell 3D models on Booth."
+      "blender": "Able to create models and animations. I sell 3D models on Booth.",
+      "pytorch": "Used in my research — implementing, training, and evaluating models for NIDS and HAR.",
+      "kubernetes": "Used on my home server — I run a k3s cluster that hosts my autonomous-agent platform."
     }
   },
   "Qualifications": {
