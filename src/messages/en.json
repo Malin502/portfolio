@@ -22,7 +22,7 @@
   },
   "Hero": {
     "role": "Network Intrusion Detection Research × ML Platform Engineering",
-    "comment": "Fourth-year undergraduate in the Department of Information Systems Design at Doshisha University. I research anomaly detection and build and operate my own autonomous-agent infrastructure.",
+    "comment": "Fourth-year undergraduate in an information systems department. I research anomaly detection and build and operate my own autonomous-agent infrastructure.",
     "viewWorks": "View Works",
     "viewSkills": "Skill Set",
     "github": "GitHub",
@@ -35,7 +35,7 @@
     "imageAlt": "Hero",
     "description": "I enrolled in April 2023 and am now a fourth-year student, planning to continue to a master's program (class of 2029).\nMy interests are ML Platform, DevSecOps, and SRE: building the systems that keep ML running for the long term, safely and reproducibly.\nMy research focuses on anomaly detection (network intrusion detection), and at home I build and operate my own autonomous-agent infrastructure and homelab.",
     "historyItems": {
-      "1": "Currently enrolled in the Department of Information Systems Design (admitted April 2023)",
+      "1": "Currently enrolled in an information systems department (admitted April 2023)",
       "2": "Planning to enter a master's program (class of 2029)",
       "3": "Focus: ML Platform / DevSecOps / SRE",
       "4": "Part-time development experience (Java, Spring Boot)",
