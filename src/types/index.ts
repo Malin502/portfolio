@@ -6,7 +6,8 @@ export type SkillCategory = 'Language' | 'Framework' | 'Cloud' | 'Tool' | 'Other
 export type SkillId =
   | 'python' | 'java' | 'html' | 'css' | 'javascript' | 'typescript'
   | 'react' | 'nextjs' | 'tailwind' | 'aws' | 'mysql' | 'github'
-  | 'vscode' | 'docker' | 'blender' | 'pytorch' | 'kubernetes';
+  | 'vscode' | 'docker' | 'blender' | 'pytorch' | 'kubernetes' | 'proxmox' | 'grafana' | 'prometheus'
+  | 'argocd' | 'githubactions' | 'linux' | 'cloudflare';
 export type QualificationId = 'AP' | 'TOEIC' | 'DL-G' | 'FE';
 export type ExperienceId = 'exp-001' | 'exp-002' | 'exp-003' | 'exp-004';
 export type WorkId = 'NEXUS' | 'Homelab' | 'Portfolio-Website';

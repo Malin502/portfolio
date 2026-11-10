@@ -9,6 +9,13 @@ import {
   SiDocker,
   SiKubernetes,
   SiPytorch,
+  SiProxmox,
+  SiGrafana,
+  SiPrometheus,
+  SiArgo,
+  SiGithubactions,
+  SiLinux,
+  SiCloudflare,
 } from 'react-icons/si';
 
 import { FaJava, FaAws} from 'react-icons/fa';
@@ -28,4 +35,11 @@ export const skillsData: Skill[] = [
   { id: "github", name: "GitHub", tag: "Tool", icon: SiGithub, experience: "40 Months" },
   { id: "docker", name: "Docker", tag: "Tool", icon: SiDocker, experience: "8 Months" },
   { id: "kubernetes", name: "Kubernetes", tag: "Tool", icon: SiKubernetes, experience: "12 Months" },
+  { id: "proxmox", name: "Proxmox VE", tag: "Tool", icon: SiProxmox, experience: "12 Months" },
+  { id: "argocd", name: "Argo CD", tag: "Tool", icon: SiArgo, experience: "12 Months" },
+  { id: "githubactions", name: "GitHub Actions", tag: "Tool", icon: SiGithubactions, experience: "12 Months" },
+  { id: "grafana", name: "Grafana", tag: "Tool", icon: SiGrafana, experience: "6 Months" },
+  { id: "prometheus", name: "Prometheus", tag: "Tool", icon: SiPrometheus, experience: "6 Months" },
+  { id: "linux", name: "Linux", tag: "Tool", icon: SiLinux, experience: "24 Months" },
+  { id: "cloudflare", name: "Cloudflare", tag: "Cloud", icon: SiCloudflare, experience: "12 Months" },
 ];
