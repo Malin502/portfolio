@@ -122,16 +122,11 @@
   },
   "Skills": {
     "title": "SKILL",
-    "level": "Level",
     "experience": "Experience",
     "description": "Description",
-    "moreInfo": "詳しくはこちらをご覧ください",
     "items": {
       "python": "主に研究で使用。PytorchやNumpy、matplotlib、pandasなどのライブラリを用いてデータ分析や機械学習を行っています。",
       "java": "大学で2年間学びました。アルバイトでSpring Bootを使用したバックエンド開発を行っています。",
-      "html": "セマンティックHTMLを意識したマークアップが可能。",
-      "css": "Tailwind CSSを用いたスタイリングが可能。レスポンシブデザインやアニメーションの実装経験があります。",
-      "javascript": "DOM操作や基本的なES6+の文法を理解しており、フロントエンド開発が可能です。",
       "typescript": "型安全なコードを書くことができ、Next.jsと組み合わせたフロントエンド開発が可能です。",
       "react": "Next.js、TypeScriptと組み合わせたフロントエンド開発ができます。",
       "nextjs": "SSRやSSGを活用したパフォーマンスの高いWebアプリケーション開発が可能です。",
@@ -139,9 +134,7 @@
       "aws": "EC2、S3、Lambda等を使用したインフラ構築。Aurora DB, Redshiftを用いたデータ分析基盤の構築経験があります。",
       "mysql": "標準レベルでのSQLクエリの作成、データベース設計が可能です。",
       "github": "チーム開発でのバージョン管理、GitHub Actionsを使用したCI/CDの経験があります。チーム開発で必要な知識は一通り理解しています。",
-      "vscode": "プログラミングを始めたときからずっと使っています。豊富な拡張機能を活用して効率的にコーディングしています。最近はCursorに浮気しています。",
       "docker": "開発環境のコンテナ化のために主に使用しています。Docker Composeを用いたマルチコンテナ環境の利用経験もあります。",
-      "blender": "モデリングやアニメーションの作成が可能です。Boothにて3Dモデルを販売しています。",
       "pytorch": "研究で使用。NIDSやHARのモデル実装・学習・評価に用いています。",
       "kubernetes": "自宅サーバーで使用。k3sクラスタを構築し、自律エージェント基盤などを運用しています。",
       "proxmox": "自宅サーバーの仮想化基盤。k3sのワーカーノードやHome AssistantをVMで運用しています。",
@@ -200,7 +193,7 @@
   },
   "Meta": {
     "title": "Malin's Portfolio",
-    "description": "A portfolio website showcasing the projects and skills of Malin."
+    "description": "ネットワーク侵入検知（NIDS）の研究とMLプラットフォームエンジニアリングに取り組む前川拓斗のポートフォリオ。研究・論文・開発実績とスキルをまとめています。"
   },
   "Common": {
     "copyright": "© {year} {name} All Rights Reserved.",

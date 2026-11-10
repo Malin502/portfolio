@@ -4,9 +4,9 @@ export type SkillCategory = 'Language' | 'Framework' | 'Cloud' | 'Tool' | 'Other
 
 // messages のキーに使う ID（リテラルにして t() のキーを型チェックする）
 export type SkillId =
-  | 'python' | 'java' | 'html' | 'css' | 'javascript' | 'typescript'
+  | 'python' | 'java' | 'typescript'
   | 'react' | 'nextjs' | 'tailwind' | 'aws' | 'mysql' | 'github'
-  | 'vscode' | 'docker' | 'blender' | 'pytorch' | 'kubernetes' | 'proxmox' | 'grafana' | 'prometheus'
+  | 'docker' | 'pytorch' | 'kubernetes' | 'proxmox' | 'grafana' | 'prometheus'
   | 'argocd' | 'githubactions' | 'linux' | 'cloudflare';
 export type QualificationId = 'AP' | 'TOEIC' | 'DL-G' | 'FE';
 export type ExperienceId = 'exp-001' | 'exp-002' | 'exp-003' | 'exp-004';

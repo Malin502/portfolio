@@ -122,16 +122,11 @@
   },
   "Skills": {
     "title": "SKILL",
-    "level": "Level",
     "experience": "Experience",
     "description": "Description",
-    "moreInfo": "See here for more details",
     "items": {
       "python": "Mainly used for research. I do data analysis and machine learning using libraries such as PyTorch, NumPy, matplotlib, and pandas.",
       "java": "Studied for two years at university. I do backend development with Spring Boot in a part-time job.",
-      "html": "Able to write markup with semantic HTML in mind.",
-      "css": "Able to style with Tailwind CSS. I have experience implementing responsive design and animations.",
-      "javascript": "I understand DOM manipulation and basic ES6+ syntax, and can do frontend development.",
       "typescript": "I can write type-safe code and do frontend development in combination with Next.js.",
       "react": "I can do frontend development in combination with Next.js and TypeScript.",
       "nextjs": "Able to develop high-performance web applications leveraging SSR and SSG.",
@@ -139,9 +134,7 @@
       "aws": "Infrastructure building with EC2, S3, Lambda, and more. I have experience building a data analytics platform with Aurora DB and Redshift.",
       "mysql": "Able to write standard-level SQL queries and design databases.",
       "github": "I have experience with version control in team development and CI/CD using GitHub Actions. I understand the knowledge needed for team development.",
-      "vscode": "I have used it since I first started programming. I code efficiently with its rich extensions. Recently I have been cheating on it with Cursor.",
       "docker": "Mainly used to containerize development environments. I also have experience with multi-container environments using Docker Compose.",
-      "blender": "Able to create models and animations. I sell 3D models on Booth.",
       "pytorch": "Used in my research — implementing, training, and evaluating models for NIDS and HAR.",
       "kubernetes": "Used on my home server — I run a k3s cluster that hosts my autonomous-agent platform.",
       "proxmox": "The virtualization platform for my home lab — I run the k3s worker node and Home Assistant as VMs on it.",
@@ -200,7 +193,7 @@
   },
   "Meta": {
     "title": "Malin's Portfolio",
-    "description": "A portfolio website showcasing the projects and skills of Malin."
+    "description": "Portfolio of Takuto Maekawa — NIDS (network intrusion detection) research and ML platform engineering: publications, projects, experience, and skills."
   },
   "Common": {
     "copyright": "© {year} {name} All Rights Reserved.",
