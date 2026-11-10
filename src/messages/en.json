@@ -47,9 +47,9 @@
     "linkLabel": "See Publications",
     "items": {
       "1": {
-        "title": "NIDS Survey (co-authored)",
+        "title": "NIDS Survey (lead author)",
         "status": "In preparation",
-        "description": "Co-authoring a survey on network-based intrusion detection, focusing on data preprocessing, data partitioning, and feature extraction, with an empirical assessment of how evaluation conditions differ across studies."
+        "description": "Leading a survey on network-based intrusion detection, focusing on data preprocessing, data partitioning, and feature extraction, with an empirical assessment of how evaluation conditions differ across studies."
       },
       "2": {
         "title": "Graduation research: evaluation framework for NIDS",
