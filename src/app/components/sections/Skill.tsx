@@ -1,51 +1,158 @@
 "use client";
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Star } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { skillGroups } from "@/data/skills";
+import { skillsData } from "@/data/skills";
 
 export const Skill = () => {
     const t = useTranslations("Skills");
+    const [selectedSkill, setSelectedSkill] = useState(skillsData[0]);
+    const [selectedTag, setSelectedTag] = useState("All");
+
+    // タグの一覧を取得
+    const tags = ["All", "Language", "Framework", "Cloud", "Tool", "Other"];
+
+    // 選択されたタグに基づいてスキルをフィルタリング
+    const filteredSkills = selectedTag === "All"
+        ? skillsData
+        : skillsData.filter(skill => skill.tag === selectedTag);
+
     return (
-        <section id="skill" className="pt-24 pb-12 bg-background">
-            <div className="container mx-auto px-6 max-w-5xl">
+        <section id="skill" className="pt-24 pb-4 bg-background">
+            <div className="container mx-auto px-8 max-w-8xl">
                 {/* セクションタイトル */}
                 <div className="text-center mb-12">
-                    <h2 className="text-3xl font-bold tracking-wider mb-2">{t("title")}</h2>
+                    <h2 className="text-3xl font-bold tracking-wider mb-2">
+                        {t("title")}
+                    </h2>
                     <div className="w-12 h-1 bg-turquoise mx-auto"></div>
                 </div>
 
-                {/* 領域別 */}
-                <div className="space-y-5">
-                    {skillGroups.map((group, index) => (
+                
+
+                {/* スキルグリッド + 詳細表示 */}
+                <div className="grid grid-cols-1 lg:grid-cols-[7fr_4fr] xl:grid-cols-[8fr_5fr] gap-8 mb-15 items-stretch">
+                    {/* 左側: タグ + スキルアイコングリッド */}
+                    <div className="flex flex-col gap-6">
+                        {/* タグフィルター */}
+                        <div className="flex flex-wrap gap-3">
+                            {tags.map((tag) => (
+                                <button
+                                    key={tag}
+                                    onClick={() => setSelectedTag(tag)}
+                                    className={`
+                    px-4 py-2 rounded-full text-sm font-medium transition-all duration-300
+                    ${selectedTag === tag
+                                            ? "bg-turquoise text-white"
+                                            : "bg-white text-gray-600 hover:bg-gray-50"
+                                        }
+                  `}
+                                >
+                                    {tag}
+                                </button>
+                            ))}
+                        </div>
+                        {/* スキルグリッド*/}
+                        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5">
+                        <AnimatePresence mode="popLayout">
+                            {filteredSkills.map((skill) => {
+                                const Icon = skill.icon;
+                                const isSelected = selectedSkill.name === skill.name;
+                                return (
+                                    <motion.button
+                                        key={skill.name}
+                                        layout
+                                        initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                                        animate={{ opacity: 1, scale: 1, y: 0 }}
+                                        exit={{ opacity: 0, scale: 0.5, y: -20 }}
+                                        transition={{
+                                            duration: 0.3,
+                                            type: "spring",
+                                            stiffness: 300,
+                                            damping: 20
+                                        }}
+                                        onClick={() => setSelectedSkill(skill)}
+                                        className={`
+                      aspect-square rounded-2xl p-7 flex flex-col items-center justify-center
+                      transition-all duration-300 border-2
+                      ${isSelected
+                                                ? "bg-white border-turquoise shadow-lg"
+                                                : "bg-white border-gray-200 hover:border-gray-300 hover:shadow-md"
+                                            }
+                    `}
+                                    >
+                                        <Icon className="w-10 h-10 mb-2 text-darkgray" />
+                                        <span className="font-semibold text-xs text-center text-darkgray whitespace-nowrap">{skill.name}</span>
+                                    </motion.button>
+                                );
+                            })}
+                        </AnimatePresence>
+                        </div>
+                    </div>
+                    {/* 右側: 選択されたスキルの詳細 */}
+                    <AnimatePresence mode="wait">
                         <motion.div
-                            key={group.id}
-                            initial={{ opacity: 0, y: 16 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true, amount: 0.2 }}
-                            transition={{ duration: 0.35, delay: index * 0.05 }}
-                            className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6 grid gap-4 md:grid-cols-[200px_1fr]"
+                            key={selectedSkill.name}
+                            initial={{ opacity: 0, x: 30}}
+                            animate={{ opacity: 1, x: 0}}
+                            exit={{ opacity: 0, x: -30}}
+                            transition={{
+                                duration: 0.3,
+                                type: "spring",
+                            }}
+                            className="self-stretch h-full bg-white rounded-2xl shadow-lg p-8 border border-gray-100"
                         >
-                            <div>
-                                <h3 className="text-lg font-bold text-darkgray">{t(`groups.${group.id}.title`)}</h3>
-                                <p className="mt-1 text-xs text-gray-600 leading-relaxed">{t(`groups.${group.id}.description`)}</p>
+                            {/* ヘッダー */}
+                            <div className="flex items-start gap-4 mb-6">
+                                <div className="w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0">
+                                    {React.createElement(selectedSkill.icon, {
+                                        className: "w-12 h-12 text-turquoise bg-white",
+                                    })}
+                                </div>
+                                <div>
+                                    <h3 className="text-2xl font-bold mb-1 text-darkgray">{selectedSkill.name}</h3>
+                                    <p className="text-sm text-gray-500">{selectedSkill.tag}</p>
+                                </div>
                             </div>
-                            <div className="flex flex-wrap gap-2 content-start">
-                                {group.items.map((item) => {
-                                    const Icon = item.icon;
-                                    return (
-                                        <span
-                                            key={item.name}
-                                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-gray-200 bg-background text-sm text-darkgray"
-                                        >
-                                            {Icon && <Icon className="w-4 h-4 text-turquoise" aria-hidden />}
-                                            {item.name}
-                                        </span>
-                                    );
-                                })}
+
+                            {/* レベル */}
+                            <div className="mb-6">
+                                <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">{t("level")}</p>
+                                <div className="flex gap-1">
+                                    {[1, 2, 3, 4, 5].map((star) => (
+                                        <Star
+                                            key={star}
+                                            className={`w-5 h-5 ${star <= selectedSkill.level
+                                                    ? "fill-yellow-400 text-yellow-400"
+                                                    : "fill-gray-200 text-gray-200"
+                                                }`}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+
+                            {/* 経験期間 */}
+                            <div className="mb-6">
+                                <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">{t("experience")}</p>
+                                <p className="text-xl font-bold text-gray-800">{selectedSkill.experience}</p>
+                            </div>
+
+                            {/* 説明 */}
+                            <div>
+                                <p className="text-xs text-gray-500 uppercase tracking-wide mb-2">{t("description")}</p>
+                                <p className="text-sm text-gray-700 leading-relaxed">
+                                    {t(`items.${selectedSkill.id}`)}
+                                </p>
                             </div>
                         </motion.div>
-                    ))}
+                    </AnimatePresence>
+                </div>
+                {/* 詳しくはこちらをご覧ください */}
+                <div className="text-center mb-15">
+                    <a href="https://stackshare.io/takuto.ponta/mystack" className="text-turquoise hover:text-teal text-sm font-medium">
+                        {t("moreInfo")}
+                    </a>
                 </div>
             </div>
         </section>

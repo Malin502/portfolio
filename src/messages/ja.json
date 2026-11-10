@@ -122,27 +122,26 @@
   },
   "Skills": {
     "title": "SKILL",
-    "groups": {
-      "languages": {
-        "title": "Languages",
-        "description": "研究では Python、Webでは TypeScript/JavaScript、業務・アルバイトでは Java を使っています。"
-      },
-      "ml": {
-        "title": "ML / Data",
-        "description": "前処理とリーク防止、評価設計を意識した実験を行っています。"
-      },
-      "infra": {
-        "title": "Infrastructure",
-        "description": "自宅の k3s クラスタを自作・運用し、監視と CI/CD まで整えています。"
-      },
-      "web": {
-        "title": "Web",
-        "description": "フロントエンドからバックエンドまで一通り開発できます。"
-      },
-      "research": {
-        "title": "Research",
-        "description": "LaTeX での論文執筆、再現性の管理、英語論文の読み書きを行っています。"
-      }
+    "level": "Level",
+    "experience": "Experience",
+    "description": "Description",
+    "moreInfo": "詳しくはこちらをご覧ください",
+    "items": {
+      "python": "主に研究で使用。PytorchやNumpy、matplotlib、pandasなどのライブラリを用いてデータ分析や機械学習を行っています。",
+      "java": "大学で2年間学びました。アルバイトでSpring Bootを使用したバックエンド開発を行っています。",
+      "html": "セマンティックHTMLを意識したマークアップが可能。",
+      "css": "Tailwind CSSを用いたスタイリングが可能。レスポンシブデザインやアニメーションの実装経験があります。",
+      "javascript": "DOM操作や基本的なES6+の文法を理解しており、フロントエンド開発が可能です。",
+      "typescript": "型安全なコードを書くことができ、Next.jsと組み合わせたフロントエンド開発が可能です。",
+      "react": "Next.js、TypeScriptと組み合わせたフロントエンド開発ができます。",
+      "nextjs": "SSRやSSGを活用したパフォーマンスの高いWebアプリケーション開発が可能です。",
+      "tailwind": "ユーティリティファーストのCSSフレームワークを用いた効率的なスタイリングが可能です。",
+      "aws": "EC2、S3、Lambda等を使用したインフラ構築。Aurora DB, Redshiftを用いたデータ分析基盤の構築経験があります。",
+      "mysql": "標準レベルでのSQLクエリの作成、データベース設計が可能です。",
+      "github": "チーム開発でのバージョン管理、GitHub Actionsを使用したCI/CDの経験があります。チーム開発で必要な知識は一通り理解しています。",
+      "vscode": "プログラミングを始めたときからずっと使っています。豊富な拡張機能を活用して効率的にコーディングしています。最近はCursorに浮気しています。",
+      "docker": "開発環境のコンテナ化のために主に使用しています。Docker Composeを用いたマルチコンテナ環境の利用経験もあります。",
+      "blender": "モデリングやアニメーションの作成が可能です。Boothにて3Dモデルを販売しています。"
     }
   },
   "Qualifications": {

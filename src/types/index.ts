@@ -1,6 +1,12 @@
 // 文面は src/messages/*.json に移動。ここには言語に依存しない構造データのみを残す。
 
-export type SkillGroupId = 'languages' | 'ml' | 'infra' | 'web' | 'research';
+export type SkillCategory = 'Language' | 'Framework' | 'Cloud' | 'Tool' | 'Other';
+
+// messages のキーに使う ID（リテラルにして t() のキーを型チェックする）
+export type SkillId =
+  | 'python' | 'java' | 'html' | 'css' | 'javascript' | 'typescript'
+  | 'react' | 'nextjs' | 'tailwind' | 'aws' | 'mysql' | 'github'
+  | 'vscode' | 'docker' | 'blender';
 export type QualificationId = 'AP' | 'TOEIC' | 'DL-G' | 'FE';
 export type ExperienceId = 'exp-001' | 'exp-002' | 'exp-003' | 'exp-004';
 export type WorkId = 'NEXUS' | 'Homelab' | 'Portfolio-Website';
@@ -26,14 +32,14 @@ export interface Profile {
   skills: string[];
 };
 
-//スキル（領域別。説明文は messages の Skills.groups.<id>）
-export interface SkillItem {
+//スキル
+export interface Skill {
+  id: SkillId;
   name: string;
-  icon?: React.ElementType;
-}
-export interface SkillGroup {
-  id: SkillGroupId;
-  items: SkillItem[];
+  tag: SkillCategory;
+  icon: React.ElementType;
+  level: number; // 1から5
+  experience: string; // 経験期間
 }
 
 //資格
