@@ -11,7 +11,7 @@ export const Skill = () => {
     const [selectedTag, setSelectedTag] = useState("All");
 
     // タグの一覧を取得
-    const tags = ["All", "Language", "Framework", "Cloud", "Tool", "Other"];
+    const tags = ["All", "Language", "Framework", "Cloud", "Tool"];
 
     // 選択されたタグに基づいてスキルをフィルタリング
     const filteredSkills = selectedTag === "All"
